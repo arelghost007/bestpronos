@@ -19,7 +19,7 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className='mb-3!'>
-        <Image src="/logo2.webP" alt="Logo BestPronos" width={150} height={30} className='object-cover' priority/>
+        <Image src="/logo2.webp" alt="Logo BestPronos" width={150} height={30} className='object-cover' priority/>
       </div>
       <div className="hero-glw"></div>
 
