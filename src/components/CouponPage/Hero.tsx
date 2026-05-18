@@ -58,9 +58,10 @@ export default function Hero() {
               src={couponImage} 
               alt="Match du jour" 
               style={{ objectFit: 'contain' }} 
-              width={400} 
-              height={400} 
-              sizes='(max-width: 768px) 340px, 400px'
+              width={322} 
+              height={322} 
+              fetchPriority='high'
+              sizes='(max-width: 768px) 322px, 400px'
               priority
             />
           </div>
