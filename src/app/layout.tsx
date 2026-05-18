@@ -1,6 +1,8 @@
 // app/layout.js
+import { Suspense } from 'react';
 import './globals.css'
 import { Bebas_Neue, Outfit } from 'next/font/google'
+import MetaPixel from '@/components/MetaPixel/MetaPixel';
 
 const bebasNeue = Bebas_Neue({
   weight: '400',
@@ -18,10 +20,10 @@ const outfit = Outfit({
 export const metadata = {
   title: 'BestPronos – Récupère ton Coupon du Jour',
   description: 'Découvrez nos pronostics et coupons analysés à forte cote. Rejoignez notre communauté VIP exclusive sur WhatsApp pour maximiser vos gains dès aujourd’hui.',
-  keywords: ['pronostics sportifs', 'coupon du jour', 'meilleur pronostiqueur', 'canal vip whatsapp', 'pronos football', 'cote safe', 'coupon validé', 'gains sportifs', 'analyses de matchs','coupon gratuit', 'coupon grosse cote'],
+  keywords: ['pronostics sportifs', 'coupon du jour', 'meilleur pronostiqueur', 'groupe vip whatsapp', 'pronos football', 'cote safe', 'coupon validé', 'gains sportifs', 'analyses de matchs','coupon gratuit', 'coupon grosse cote'],
   
-  // URL de base du site (Remplacez par votre vrai domaine)
-  metadataBase: new URL('https://www.bestpronos.com'), 
+  // ⚠️ Pensez à remplacer par votre domaine final dès que vous l'aurez acheté
+  metadataBase: new URL('https://bestpronos.vercel.app'), 
   
   alternates: {
     canonical: '/',
@@ -44,12 +46,12 @@ export const metadata = {
   // Open Graph (Optimise l'aperçu du lien quand vous le partagez sur WhatsApp, Telegram, Facebook)
   openGraph: {
     title: 'BestPronos – Le Coupon du Jour Analysé',
-    description: 'Ne ratez pas les pronostics du jour. Accès direct au canal VIP WhatsApp.',
-    url: 'https://www.bestpronos.com',
+    description: 'Ne ratez pas les pronostics du jour. Accès direct au groupe VIP WhatsApp.',
+    url: 'https://bestpronos.vercel.app',
     siteName: 'BestPronos',
     images: [
       {
-        url: '/og-image.png', // Placez une image attrayante de 1200x630px dans votre dossier /public
+        url: '/og-image.png', // Assurez-vous d'avoir ce fichier 1200x630px dans votre dossier /public
         width: 1200,
         height: 630,
         alt: 'Aperçu BestPronos - Coupon du jour',
@@ -66,10 +68,12 @@ export const metadata = {
     description: 'Pronostics sportifs à forte cote mis à jour quotidiennement.',
     images: ['/og-image.png'],
   },
+  
+  // Configuration des icônes corrigée pour Apple/iOS
   icons: {
     icon: "/logo1.ico",
     shortcut: "/logo1.ico",
-    apple: "/logo1.ico",
+    apple: "/apple-touch-icon.png", // 💡 Convertissez votre logo en PNG de 180x180px pour les iPhones !
   },
 };
 
@@ -81,10 +85,14 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${bebasNeue.variable} ${outfit.variable}`}>
       <head>
-        {/* Balise thématique pour colorer la barre de navigation mobile (Ex: Vert WhatsApp ou Noir) */}
+        {/* Balise thématique pour colorer la barre de navigation mobile */}
         <meta name="theme-color" content="#12141A" />
       </head>
       <body style={{ backgroundColor: '#12141A', color: '#ffffff', minHeight: '100vh' }}>
+        {/* Le pixel est parfaitement isolé dans sa Suspense (Indispensable pour le build Next.js statique) */}
+        <Suspense fallback={null}>
+          <MetaPixel />
+        </Suspense>
         {children}
       </body>
     </html>

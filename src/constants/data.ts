@@ -2,11 +2,11 @@ import { CouponData, WinningCoupon } from "@/types/dataTypes";
 
 export const COUPON_DATA: CouponData = {
     id: 1,
-    odds: 3.75,
-    stake: 20000,
-    gain: 20000 * 3.75,
-    date: new Date().toString(),
-    image_url: "/assets/coupon_jour.png",
+    odds: 789.162,
+    stake: 25000,
+    gain: 19729051.52,
+    date: "23/05/2026",
+    image_url: "/assets/coupon_jour.jpg",
     whatsapp_link: "https://chat.whatsapp.com/DTobg9SWau099IAdQ7WU4v"
   }
 
@@ -16,7 +16,7 @@ export const WONNING_COUPONS: WinningCoupon[] = [
         odds: 609.617,
         stake: 30000,
         gain: 18288508.96,
-        date: "17-05-2026",
+        date: "17/05/2026",
         image_url: "/assets/won_1.jpg",
         video_url: "https://pyxwemjnkxpxcfpyilsq.supabase.co/storage/v1/object/public/won-media/won_1_vid.MOV"
     },
@@ -25,7 +25,7 @@ export const WONNING_COUPONS: WinningCoupon[] = [
         odds: 964.474,
         stake: 23000,
         gain: 22182907.75,
-        date: "16-05-2026",
+        date: "16/05/2026",
         image_url: "/assets/won_2.jpg",
         video_url: "https://pyxwemjnkxpxcfpyilsq.supabase.co/storage/v1/object/public/won-media/won_2_vid.MOV"
     },
@@ -34,7 +34,7 @@ export const WONNING_COUPONS: WinningCoupon[] = [
         odds: 103.834,
         stake: 80000,
         gain: 8306777.63,
-        date: "16-05-2026",
+        date: "16/05/2026",
         image_url: "/assets/won_3.jpg",
         video_url: "https://pyxwemjnkxpxcfpyilsq.supabase.co/storage/v1/object/public/won-media/won_3_vid.MOV"
     },
@@ -43,7 +43,7 @@ export const WONNING_COUPONS: WinningCoupon[] = [
         odds: 449.163,
         stake: 20000,
         gain: 8983270.103,
-        date: "13-05-2026",
+        date: "13/05/2026",
         image_url: "/assets/won_4.jpg",
         video_url: "https://pyxwemjnkxpxcfpyilsq.supabase.co/storage/v1/object/public/won-media/won_4_vid.MOV"
     },

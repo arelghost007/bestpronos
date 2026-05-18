@@ -1,3 +1,4 @@
+
 // app/page.js
 import FinalCTA from '@/components/CouponPage/FinalCTA'
 import Hero from '@/components/CouponPage/Hero'

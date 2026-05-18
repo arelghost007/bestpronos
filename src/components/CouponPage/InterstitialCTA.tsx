@@ -1,4 +1,5 @@
-import { Lock, SquareArrowRightEnter } from "lucide-react";
+import { Lock } from "lucide-react";
+import CtaBtn from "./CtaBtn";
 
 // components/InterstitialCTA.js
 export default function InterstitialCTA({ whatsappLink }: { whatsappLink: string }) {
@@ -15,11 +16,7 @@ export default function InterstitialCTA({ whatsappLink }: { whatsappLink: string
           Les sélections sont partagées <strong>directement sur WhatsApp</strong> avant le début des
           matchs. Ne rate pas le prochain.
         </p>
-        <div className="cta-group">
-          <a href={whatsappLink} className="btn btn-wa">
-            <SquareArrowRightEnter /> Rejoindre WhatsApp
-          </a>
-        </div>
+        <CtaBtn whatsappUrl={whatsappLink} />
       </div>
     </section>
   )

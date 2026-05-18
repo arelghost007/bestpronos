@@ -5,6 +5,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import { CircleCheckBig, SquareArrowRightEnter, Trophy } from "lucide-react";
 import { WinningCoupon } from "@/types/dataTypes";
+import CtaBtn from "../CouponPage/CtaBtn";
 
 
 // Interface pour encapsuler proprement les props du composant
@@ -37,12 +38,10 @@ const VideoPopup = ({ videoUrl, onClose, whatsappLink }: VideoPopupProps) => {
         <button className="vp-close" onClick={onClose} aria-label="Fermer">✕</button>
         <video className="vp-video" src={videoUrl} autoPlay controls playsInline muted/>
         <div className="vp-label">
-          <Trophy size={15} color="#F5A623" strokeWidth={1.75} absoluteStrokeWidth /> Résultat du coupon &nbsp;·&nbsp; <span>Canal VIP</span>
+          <Trophy size={15} color="#F5A623" strokeWidth={1.75} absoluteStrokeWidth /> Résultat du coupon &nbsp;·&nbsp; <span>Groupe VIP</span>
         </div>
-        <div className="">
-          <a href={whatsappLink} className="btn bg-(--wa-green) rounded-none!">
-            <SquareArrowRightEnter /> Rejoindre la chaîne 
-          </a>
+        <div className="flex justify-center items-center" style={{ padding: '16px' }}>
+          <CtaBtn whatsappUrl={whatsappLink} />
         </div>
       </div>
     </div>
@@ -257,7 +256,7 @@ export default function ScaleCarousel({ winCoupons, whatsappLink }: ScaleCarouse
                       </div>
 
                       <div className="win-card-footer">
-                        Partagé dans le canal <span>VIP</span> avant les matchs
+                        Partagé dans le groupe <span>VIP</span> avant les matchs
                       </div>
                     </div>
                   </div>

@@ -660,6 +660,8 @@ body::before {
   padding: 10px 16px 14px;
   z-index: 100;
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
 }
 

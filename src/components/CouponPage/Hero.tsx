@@ -1,24 +1,20 @@
 // components/Hero.js
 import { COUPON_DATA } from '@/constants/data'
-import { createClient } from '@/lib/clientSupabase'
 import { CouponData } from '@/types/dataTypes'
-import { SquareArrowRightEnter, SquareCheckBig, Users } from 'lucide-react'
+import { SquareCheckBig, Users } from 'lucide-react'
 import Image from 'next/image'
+import CtaBtn from './CtaBtn'
 
 export default function Hero() {
 
   const currentCoupon: CouponData = COUPON_DATA
 
   // Valeurs de secours (fallback) si la table est vide pour éviter un crash
-  const formattedDate = currentCoupon?.date 
-    ? new Date(currentCoupon.date).toLocaleDateString('fr-FR') 
-    : "Disponible"
-    
   const odds = currentCoupon?.odds ? currentCoupon.odds.toFixed(2) : "—"
   const stake = currentCoupon?.stake ? `${currentCoupon.stake.toLocaleString('fr-FR')} FCFA` : "—"
   const gain = currentCoupon?.gain ? `${currentCoupon.gain.toLocaleString('fr-FR')} FCFA` : "—"
   const couponImage = currentCoupon?.image_url || "/assets/image.png"
-  const whatsappUrl = currentCoupon?.whatsapp_link || "#"
+  const whatsappUrl = currentCoupon?.whatsapp_link || "https://chat.whatsapp.com/DTobg9SWau099IAdQ7WU4v"
 
   return (
     <section className="hero">
@@ -39,7 +35,7 @@ export default function Hero() {
       </h1>
 
       <p className="sub">
-        Coupon analysé • <strong>Cote élevée</strong> • Disponible uniquement via notre canal WhatsApp
+        Coupon analysé • <strong>Cote élevée</strong> • Disponible uniquement dans notre groupe WhatsApp
       </p>
 
       <div className="ticket-wrap">
@@ -47,7 +43,7 @@ export default function Hero() {
           <div className="ticket-header">
             <div>
               <div className="label">Coupon VIP</div>
-              <div className="val">{formattedDate}</div>
+              <div className="val">{currentCoupon.date}</div>
             </div>
             <div style={{ textAlign: 'right' }}>
               <div className="label">Cote totale</div>
@@ -82,19 +78,14 @@ export default function Hero() {
 
           <div className="ticket-overlay">
             <p className="unlock-hint">
-              Rejoins le canal <span>WhatsApp</span> pour débloquer les matchs
+              Rejoins le groupe <span>WhatsApp</span> pour débloquer les matchs
             </p>
           </div>
           <div className="ticket-glow"></div>
         </div>
       </div>
 
-      <div className="cta-group">
-        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-wa">
-          <span className="btn-icon"><SquareArrowRightEnter /></span>
-          Rejoindre le canal WhatsApp
-        </a>
-      </div>
+      <CtaBtn whatsappUrl={whatsappUrl} />
 
       <div className="proof-strip">
         <div className="proof-item">
