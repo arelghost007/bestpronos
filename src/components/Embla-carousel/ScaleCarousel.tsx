@@ -4,17 +4,8 @@ import React, { useEffect, useCallback, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import { CircleCheckBig, SquareArrowRightEnter, Trophy } from "lucide-react";
+import { WinningCoupon } from "@/types/dataTypes";
 
-// 1. Correction de l'interface pour correspondre EXACTEMENT aux données Supabase (snake_case)
-interface WinningCoupon {
-  id: number;
-  date: string | null;
-  image_url: string | null;  // Correction ici
-  video_url: string | null;  // Correction ici
-  odds: number | null;
-  stake: number | string | null;
-  gain: number | string | null;
-}
 
 // Interface pour encapsuler proprement les props du composant
 interface ScaleCarouselProps {
@@ -220,7 +211,6 @@ export default function ScaleCarousel({ winCoupons, whatsappLink }: ScaleCarouse
                           style={{ objectFit: "contain" }}
                           sizes="(max-width: 480px) 88vw, 360px"
                           priority={index === 0}
-                          unoptimized
                         />
                       ) : (
                         <div className="w-full h-full bg-gray-900 flex items-center justify-center text-xs text-gray-600">

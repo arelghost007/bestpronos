@@ -1,30 +1,13 @@
 // components/Hero.js
+import { COUPON_DATA } from '@/constants/data'
 import { createClient } from '@/lib/clientSupabase'
+import { CouponData } from '@/types/dataTypes'
 import { SquareArrowRightEnter, SquareCheckBig, Users } from 'lucide-react'
 import Image from 'next/image'
 
-interface CouponData {
-  id: number
-  odds: number | null
-  stake: number | null
-  gain: number | null
-  date: string | null
-  whatsapp_link: string | null
-  image_url: string | null
-}
+export default function Hero() {
 
-export default async function Hero() {
-  const supabase = createClient()
-  
-  // Récupération du tout dernier coupon enregistré (le coupon du jour)
-  const { data } = await supabase
-    .from('coupons')
-    .select('*')
-    .order('id', { ascending: false })
-    .limit(1)
-    .single()
-
-  const currentCoupon: CouponData | null = data
+  const currentCoupon: CouponData = COUPON_DATA
 
   // Valeurs de secours (fallback) si la table est vide pour éviter un crash
   const formattedDate = currentCoupon?.date 
@@ -39,6 +22,9 @@ export default async function Hero() {
 
   return (
     <section className="hero">
+      <div className='mb-3!'>
+        <Image src="/logo1.png" alt="Logo BestPronos" width={150} height={30} className='object-cover'/>
+      </div>
       <div className="hero-glw"></div>
 
       <div className="badge">
@@ -79,7 +65,6 @@ export default async function Hero() {
               width={800} 
               height={300} 
               priority
-              unoptimized
             />
           </div>
 
