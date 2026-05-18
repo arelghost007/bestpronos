@@ -1,6 +1,6 @@
 "use client"; // 👈 OBLIGATOIRE dans l'App Router de Next.js pour utiliser onClick et window
 
-import { ArrowRight } from 'lucide-react'; // Utilisation d'une icône standard pour éviter les erreurs d'import
+import { SquareArrowRightEnter } from 'lucide-react'; // Utilisation d'une icône standard pour éviter les erreurs d'import
 import React from 'react';
 
 // Déclaration propre de fbq pour TypeScript
@@ -36,7 +36,7 @@ function CtaBtn({ whatsappUrl }: CtaBtnProps) {
         className="btn btn-wa" 
         onClick={handleWhatsAppClick}
       >
-        <span className="btn-icon"><ArrowRight size={18} /></span>
+        <span className="btn-icon"><SquareArrowRightEnter size={18} /></span>
         Rejoindre le groupe WhatsApp
       </a>
     </div>

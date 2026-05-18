@@ -41,7 +41,7 @@ export default function Home() {
         <main>
           {/* On distribue le lien à chaque composant via les props */}
           <Hero/>
-          <TicketTicker />
+          <div className="divider"></div>
           <WinningCoupons whatsappLink={whatsappLink} />
           
           <div className="divider"></div>

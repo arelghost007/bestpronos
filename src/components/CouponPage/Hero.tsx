@@ -19,7 +19,7 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className='mb-3!'>
-        <Image src="/logo1.png" alt="Logo BestPronos" width={150} height={30} className='object-cover'/>
+        <Image src="/logo2.webP" alt="Logo BestPronos" width={150} height={30} className='object-cover' priority/>
       </div>
       <div className="hero-glw"></div>
 
@@ -89,13 +89,13 @@ export default function Hero() {
 
       <div className="proof-strip">
         <div className="proof-item">
-          <span className="check"><SquareCheckBig /></span>
+          <span className="check"><SquareCheckBig size={18}/></span>
           <span>
-            <strong>18</strong> coupons validés cette semaine
+            <strong>7</strong> coupons validés cette semaine
           </span>
         </div>
         <div className="proof-item">
-          <span className="check"><Users /></span>
+          <span className="check"><Users size={18} /></span>
           <span>
             <strong>+2 500</strong> membres actifs
           </span>
