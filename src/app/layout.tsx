@@ -66,6 +66,11 @@ export const metadata = {
     description: 'Pronostics sportifs à forte cote mis à jour quotidiennement.',
     images: ['/og-image.png'],
   },
+  icons: {
+    icon: "/logo1.ico",
+    shortcut: "/logo1.ico",
+    apple: "/logo1.ico",
+  },
 };
 
 export default function RootLayout({
