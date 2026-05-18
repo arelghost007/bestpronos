@@ -1,18 +1,12 @@
 // components/WinningCoupons.js
 // Pas de 'use client' ici, ce composant s'exécute côté serveur
 
+import { WONNING_COUPONS } from '@/constants/data'
 import ScaleCarousel from '../Embla-carousel/ScaleCarousel'
 import { Activity } from 'lucide-react'
-import { createClient } from '@/lib/clientSupabase' // Assurez-vous que ce client fonctionne côté serveur (createServerComponentClient)
 
-export default async function WinningCoupons({ whatsappLink }: { whatsappLink: string }) {
-  const supabase = createClient()
-  
-  // Récupération des données côté serveur
-  const { data: coupons } = await supabase
-    .from('won')
-    .select('*')
-    .order('id', { ascending: true })
+export default function WinningCoupons({ whatsappLink }: { whatsappLink: string }) {
+  const coupons = WONNING_COUPONS
 
   return (
     <section className="py-10">
@@ -21,7 +15,7 @@ export default async function WinningCoupons({ whatsappLink }: { whatsappLink: s
       </h2>
       
       {/* On passe les données au composant client */}
-      <ScaleCarousel winCoupons={coupons || []} whatsappLink={whatsappLink} />
+      <ScaleCarousel winCoupons={coupons} whatsappLink={whatsappLink} />
     </section>
   )
 }

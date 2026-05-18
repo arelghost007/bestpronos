@@ -16,7 +16,7 @@ const outfit = Outfit({
 
 // ─── OPTIMISATION SEO AVANCÉE ────────────────────────────────────────────────
 export const metadata = {
-  title: 'BestPronos – Récupère ton Coupon du Jour 100% Validé',
+  title: 'BestPronos – Récupère ton Coupon du Jour',
   description: 'Découvrez nos pronostics et coupons analysés à forte cote. Rejoignez notre communauté VIP exclusive sur WhatsApp pour maximiser vos gains dès aujourd’hui.',
   keywords: ['pronostics sportifs', 'coupon du jour', 'meilleur pronostiqueur', 'canal vip whatsapp', 'pronos football', 'cote safe', 'coupon validé', 'gains sportifs', 'analyses de matchs','coupon gratuit', 'coupon grosse cote'],
   
