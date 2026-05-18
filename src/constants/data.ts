@@ -6,7 +6,7 @@ export const COUPON_DATA: CouponData = {
     stake: 25000,
     gain: 19729051.52,
     date: "23/05/2026",
-    image_url: "/assets/coupon_jour.jpg",
+    image_url: "/assets/coupon_jour2.webp",
     whatsapp_link: "https://chat.whatsapp.com/DTobg9SWau099IAdQ7WU4v"
   }
 

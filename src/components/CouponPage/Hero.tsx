@@ -19,7 +19,7 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className='mb-3!'>
-        <Image src="/logo2.webp" alt="Logo BestPronos" width={150} height={30} className='object-cover' priority/>
+        <Image src="/logo2.webp" alt="Logo BestPronos" width={150} height={150} className='object-cover' priority/>
       </div>
       <div className="hero-glw"></div>
 
@@ -58,8 +58,9 @@ export default function Hero() {
               src={couponImage} 
               alt="Match du jour" 
               style={{ objectFit: 'contain' }} 
-              width={800} 
-              height={300} 
+              width={400} 
+              height={400} 
+              sizes='(max-width: 768px) 340px, 400px'
               priority
             />
           </div>
