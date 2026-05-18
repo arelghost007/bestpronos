@@ -208,7 +208,7 @@ export default function ScaleCarousel({ winCoupons, whatsappLink }: ScaleCarouse
                           alt={`Coupon gagnant n°${coupon.id}`}
                           fill
                           style={{ objectFit: "contain" }}
-                          sizes="(max-width: 480px) 189px, (max-width: 768px) 300px, 400px"
+                          sizes="(max-width: 480px) 88vw, 360px"
                           priority={index === 0}
                         />
                       ) : (
