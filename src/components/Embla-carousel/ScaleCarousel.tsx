@@ -36,7 +36,7 @@ const VideoPopup = ({ videoUrl, onClose, whatsappLink }: VideoPopupProps) => {
     <div className="vp-backdrop" onClick={onClose}>
       <div className="vp-modal" onClick={(e) => e.stopPropagation()}>
         <button className="vp-close" onClick={onClose} aria-label="Fermer">✕</button>
-        <video className="vp-video" src={videoUrl} autoPlay controls playsInline muted/>
+        <video className="vp-video" src={videoUrl} autoPlay controls playsInline/>
         <div className="vp-label">
           <Trophy size={15} color="#F5A623" strokeWidth={1.75} absoluteStrokeWidth /> Résultat du coupon &nbsp;·&nbsp; <span>Groupe VIP</span>
         </div>

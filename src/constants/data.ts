@@ -18,7 +18,7 @@ export const WONNING_COUPONS: WinningCoupon[] = [
         gain: 18288508.96,
         date: "17/05/2026",
         image_url: "/assets/won_1.jpg",
-        video_url: "https://pyxwemjnkxpxcfpyilsq.supabase.co/storage/v1/object/public/won-media/won_1_vid.MOV"
+        video_url: "https://pyxwemjnkxpxcfpyilsq.supabase.co/storage/v1/object/public/won-media/won_1_vid.mp4"
     },
     {
         id: 2,
@@ -27,7 +27,7 @@ export const WONNING_COUPONS: WinningCoupon[] = [
         gain: 22182907.75,
         date: "16/05/2026",
         image_url: "/assets/won_2.jpg",
-        video_url: "https://pyxwemjnkxpxcfpyilsq.supabase.co/storage/v1/object/public/won-media/won_2_vid.MOV"
+        video_url: "https://pyxwemjnkxpxcfpyilsq.supabase.co/storage/v1/object/public/won-media/won_2_vid.mp4"
     },
     {
         id: 3,
@@ -36,7 +36,7 @@ export const WONNING_COUPONS: WinningCoupon[] = [
         gain: 8306777.63,
         date: "16/05/2026",
         image_url: "/assets/won_3.jpg",
-        video_url: "https://pyxwemjnkxpxcfpyilsq.supabase.co/storage/v1/object/public/won-media/won_3_vid.MOV"
+        video_url: "https://pyxwemjnkxpxcfpyilsq.supabase.co/storage/v1/object/public/won-media/won_3_vid.mp4"
     },
     {
         id: 4,
@@ -45,6 +45,6 @@ export const WONNING_COUPONS: WinningCoupon[] = [
         gain: 8983270.103,
         date: "13/05/2026",
         image_url: "/assets/won_4.jpg",
-        video_url: "https://pyxwemjnkxpxcfpyilsq.supabase.co/storage/v1/object/public/won-media/won_4_vid.MOV"
+        video_url: "https://pyxwemjnkxpxcfpyilsq.supabase.co/storage/v1/object/public/won-media/won_4_vid.mp4"
     },
 ];
