@@ -4,7 +4,7 @@ import CtaBtn from "./CtaBtn";
 // components/InterstitialCTA.js
 export default function InterstitialCTA({ whatsappLink }: { whatsappLink: string }) {
   return (
-    <section className="section" style={{ paddingTop: '32px', paddingBottom: '32px' }}>
+    <section id='interstitialCTASection' className="section" style={{ paddingTop: '32px', paddingBottom: '32px' }}>
       <div className="inter-cta">
         <div className="mb-10! flex justify-center items-center"><Lock size={28} color="#F5A623" strokeWidth={3}/></div>
         <h2 style={{ fontSize: '24px', marginBottom: '10px', lineHeight: '1.1' }}>

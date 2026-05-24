@@ -21,7 +21,7 @@ export default function WhyJoin() {
   ]
 
   return (
-    <section className="section">
+    <section id='whyJoinSection' className="section">
       <h2 className="section-title">
         Pourquoi nous <span>rejoindre ?</span>
       </h2>

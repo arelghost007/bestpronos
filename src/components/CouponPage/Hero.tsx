@@ -17,7 +17,7 @@ export default function Hero() {
   const whatsappUrl = currentCoupon?.whatsapp_link || "https://chat.whatsapp.com/DTobg9SWau099IAdQ7WU4v"
 
   return (
-    <section className="hero">
+    <section id='heroSection' className="hero">
       <div className='mb-3!'>
         <Image src="/logo1.webp" alt="Logo BestPronos" width={150} height={150} className='object-cover' priority/>
       </div>

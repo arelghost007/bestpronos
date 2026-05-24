@@ -9,7 +9,7 @@ export default function WinningCoupons({ whatsappLink }: { whatsappLink: string 
   const coupons = WONNING_COUPONS
 
   return (
-    <section className="py-10">
+    <section id='winningCouponsSection' className="py-10">
       <h2 className="section-title flex justify-center items-center gap-2">
         <Activity size={46} color="#F5A623" /> Derniers coupons <span className="text-amber-500">gagnants</span>
       </h2>

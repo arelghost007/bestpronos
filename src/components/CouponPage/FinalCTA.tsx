@@ -6,7 +6,7 @@ import CtaBtn from "./CtaBtn";
 // components/FinalCTA.js
 export default function FinalCTA({ whatsappLink }: { whatsappLink: string }) {
   return (
-    <section className="final-cta">
+    <section id='finalCTASection' className="final-cta">
       <h2 className="">
         Le coupon du jour
         <br />
