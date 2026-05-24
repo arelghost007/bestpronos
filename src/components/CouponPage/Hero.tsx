@@ -93,7 +93,7 @@ export default function Hero() {
         <div className="proof-item">
           <span className="check"><SquareCheckBig size={18}/></span>
           <span>
-            <strong>7</strong> coupons validés cette semaine
+            <strong>14</strong> coupons validés cette semaine
           </span>
         </div>
         <div className="proof-item">
