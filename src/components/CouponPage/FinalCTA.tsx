@@ -13,7 +13,7 @@ export default function FinalCTA({ whatsappLink }: { whatsappLink: string }) {
         est encore <span>disponible 🔥</span>
       </h2>
       <p className="" style={{ marginTop: '12px' }}>
-        Rejoins la chaine maintenant et crée ton compte pour commencer à gagner dès ce soir.
+        Rejoins le groupe maintenant et crée ton compte pour commencer à gagner dès ce soir.
       </p>
       <div className="flex justify-center items-center">
         <CtaBtn whatsappUrl={whatsappLink} />

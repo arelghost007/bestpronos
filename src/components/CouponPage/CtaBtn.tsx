@@ -37,7 +37,7 @@ function CtaBtn({ whatsappUrl }: CtaBtnProps) {
         onClick={handleWhatsAppClick}
       >
         <span className="btn-icon"><SquareArrowRightEnter size={18} /></span>
-        Rejoindre la chaine WhatsApp
+        Rejoindre le groupe WhatsApp
       </a>
     </div>
   );
