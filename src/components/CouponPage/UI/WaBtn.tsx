@@ -1,7 +1,7 @@
 import { MessageCircle } from "lucide-react";
 import { useState } from "react";
 
-export function WaBtn({ label = "Rejoindre le groupe WhatsApp", large = false, full = false, WA_URL, G }:{ label?: string; large?: boolean; full?: boolean; WA_URL: string; G: string }) {
+export function WaBtn({ label = "Rejoindre la chaine WhatsApp", large = false, full = false, WA_URL, G }:{ label?: string; large?: boolean; full?: boolean; WA_URL: string; G: string }) {
   const [h, setH] = useState(false);
   return (
     <a

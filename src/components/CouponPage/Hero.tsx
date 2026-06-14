@@ -35,7 +35,7 @@ export default function Hero() {
       </h1>
 
       <p className="sub">
-        Coupon analysé • <strong>Cote élevée</strong> • Disponible uniquement dans notre groupe WhatsApp
+        Coupon analysé • <strong>Cote élevée</strong> • Disponible uniquement dans notre chaine WhatsApp
       </p>
 
       <div className="ticket-wrap">
@@ -80,7 +80,7 @@ export default function Hero() {
 
           <div className="ticket-overlay">
             <p className="unlock-hint">
-              Rejoins le groupe <span>WhatsApp</span> pour débloquer les matchs
+              Rejoins la chaine <span>WhatsApp</span> pour débloquer les matchs
             </p>
           </div>
           <div className="ticket-glow"></div>

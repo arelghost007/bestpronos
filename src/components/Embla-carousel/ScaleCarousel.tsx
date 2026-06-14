@@ -38,7 +38,7 @@ const VideoPopup = ({ videoUrl, onClose, whatsappLink }: VideoPopupProps) => {
         <button className="vp-close" onClick={onClose} aria-label="Fermer">✕</button>
         <video className="vp-video" src={videoUrl} autoPlay controls playsInline/>
         <div className="vp-label">
-          <Trophy size={15} color="#F5A623" strokeWidth={1.75} absoluteStrokeWidth /> Résultat du coupon &nbsp;·&nbsp; <span>Groupe VIP</span>
+          <Trophy size={15} color="#F5A623" strokeWidth={1.75} absoluteStrokeWidth /> Résultat du coupon &nbsp;·&nbsp; <span>Chaine VIP</span>
         </div>
         <div className="flex justify-center items-center" style={{ padding: '16px' }}>
           <CtaBtn whatsappUrl={whatsappLink} />
@@ -218,7 +218,7 @@ export default function ScaleCarousel({ winCoupons, whatsappLink }: ScaleCarouse
                       )}
 
                       {/* N'affiche le bouton play que si une vidéo existe */}
-                      {coupon.video_url && (
+                      {coupon.video && (
                         <button
                           className="play-btn"
                           onClick={() => setActiveVideo(coupon.video_url)}
@@ -256,7 +256,7 @@ export default function ScaleCarousel({ winCoupons, whatsappLink }: ScaleCarouse
                       </div>
 
                       <div className="win-card-footer">
-                        Partagé dans le groupe <span>VIP</span> avant les matchs
+                        Partagé dans la chaine <span>VIP</span> avant les matchs
                       </div>
                     </div>
                   </div>
