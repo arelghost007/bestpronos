@@ -1,84 +1,85 @@
 import { CouponData, WinningCoupon } from "@/types/dataTypes";
 
 export const COUPON_DATA: CouponData = {
-    id: 1,
-    odds: 914.374,
-    stake: 20000,
-    gain: 18287480.92,
-    date: "27/06/2026",
-    image_url: "/assets/coupon_jour.webp",
-    whatsapp_link: "https://chat.whatsapp.com/GXKgKBJ2eBT7QsGoFinwLb?mode=gi_t"
-  }
+  id: 1,
+  odds: 914.374,
+  stake: 20000,
+  gain: 18287480.92,
+  date: "27/06/2026",
+  image_url: "/assets/coupon_jour.webp",
+  whatsapp_link:
+    "https://chat.whatsapp.com/DmFlCxwB6ZH8rQzvpyrBZ4?s=cl&p=a&ilr=1",
+};
 
 export const WONNING_COUPONS: WinningCoupon[] = [
     {
         id: 1,
-        odds: 609.617,
-        stake: 30000,
-        gain: 18288508.96,
-        date: "17/05/2026",
-        image_url: "/assets/won_5.webp",
+        odds: 314.118,
+        stake: 5000,
+        gain: 1570594.77,
+        date: "14/08/2026",
+        image_url: "/assets/won_1.webp",
         video: false,
         video_url: ""
     },
     {
         id: 2,
-        odds: 609.617,
-        stake: 30000,
-        gain: 18288508.96,
-        date: "17/05/2026",
-        image_url: "/assets/won_6.webp",
+        odds: 429.392,
+        stake: 5000,
+        gain: 2146963.73,
+        date: "13/08/2026",
+        image_url: "/assets/won_2.webp",
         video: false,
         video_url: ""
     },
     {
         id: 3,
-        odds: 609.617,
-        stake: 30000,
-        gain: 18288508.96,
-        date: "17/05/2026",
-        image_url: "/assets/won_7.webp",
+        odds: 534.725,
+        stake: 5000,
+        gain: 2673628.19,
+        date: "12/08/2026",
+        image_url: "/assets/won_3.webp",
         video: false,
         video_url: ""
     },
     {
         id: 4,
-        odds: 609.617,
-        stake: 30000,
-        gain: 18288508.96,
-        date: "17/05/2026",
-        image_url: "/assets/won_1.webp",
-        video: true,
-        video_url: "https://pyxwemjnkxpxcfpyilsq.supabase.co/storage/v1/object/public/won-media/won_1_vid.mp4"
+        odds: 363.07,
+        stake: 5000,
+        gain: 1815353.04,
+        date: "07/08/2026",
+        image_url: "/assets/won_4.webp",
+        video: false,
+        video_url: ""
     },
     {
         id: 5,
-        odds: 964.474,
-        stake: 23000,
-        gain: 22182907.75,
-        date: "16/05/2026",
-        image_url: "/assets/won_2.webp",
-        video: true,
-        video_url: "https://pyxwemjnkxpxcfpyilsq.supabase.co/storage/v1/object/public/won-media/won_2_vid.mp4"
+        odds: 467.458,
+        stake: 5000,
+        gain: 2337291.67,
+        date: "06/08/2026",
+        image_url: "/assets/won_5.webp",
+        video: false,
+        video_url: ""
     },
     {
         id: 6,
-        odds: 103.834,
-        stake: 80000,
-        gain: 8306777.63,
-        date: "16/05/2026",
-        video: true,
-        image_url: "/assets/won_3.webp",
-        video_url: "https://pyxwemjnkxpxcfpyilsq.supabase.co/storage/v1/object/public/won-media/won_3_vid.mp4"
+        odds: 439.47,
+        stake: 5000,
+        gain: 2197351.78,
+        date: "05/08/2026",
+        video: false,
+        image_url: "/assets/won_6.webp",
+        video_url: ""
     },
     {
         id: 7,
-        odds: 449.163,
-        stake: 20000,
-        gain: 8983270.103,
-        date: "13/05/2026",
-        video: true,
-        image_url: "/assets/won_4.webp",
-        video_url: "https://pyxwemjnkxpxcfpyilsq.supabase.co/storage/v1/object/public/won-media/won_4_vid.mp4"
+        odds: 402.131,
+        stake: 5000,
+        gain: 2010655.55,
+        date: "03/08/2026",
+        video: false,
+        image_url: "/assets/won_7.webp",
+        video_url: ""
     },
 ];
