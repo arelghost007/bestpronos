@@ -6,7 +6,7 @@ export const COUPON_DATA: CouponData = {
   stake: 20000,
   gain: 18287480.92,
   date: "27/06/2026",
-  image_url: "/assets/coupon_jour.webp",
+  image_url: "/assets/coupons_jour.webp",
   whatsapp_link:
     "https://chat.whatsapp.com/DmFlCxwB6ZH8rQzvpyrBZ4?s=cl&p=a&ilr=1",
 };
@@ -18,7 +18,7 @@ export const WONNING_COUPONS: WinningCoupon[] = [
         stake: 5000,
         gain: 1570594.77,
         date: "14/08/2026",
-        image_url: "/assets/won_1.webp",
+        image_url: "/assets/wons_1.webp",
         video: false,
         video_url: ""
     },
@@ -28,7 +28,7 @@ export const WONNING_COUPONS: WinningCoupon[] = [
         stake: 5000,
         gain: 2146963.73,
         date: "13/08/2026",
-        image_url: "/assets/won_2.webp",
+        image_url: "/assets/wons_2.webp",
         video: false,
         video_url: ""
     },
@@ -38,7 +38,7 @@ export const WONNING_COUPONS: WinningCoupon[] = [
         stake: 5000,
         gain: 2673628.19,
         date: "12/08/2026",
-        image_url: "/assets/won_3.webp",
+        image_url: "/assets/wons_3.webp",
         video: false,
         video_url: ""
     },
@@ -48,7 +48,7 @@ export const WONNING_COUPONS: WinningCoupon[] = [
         stake: 5000,
         gain: 1815353.04,
         date: "07/08/2026",
-        image_url: "/assets/won_4.webp",
+        image_url: "/assets/wons_4.webp",
         video: false,
         video_url: ""
     },
@@ -58,7 +58,7 @@ export const WONNING_COUPONS: WinningCoupon[] = [
         stake: 5000,
         gain: 2337291.67,
         date: "06/08/2026",
-        image_url: "/assets/won_5.webp",
+        image_url: "/assets/wons_5.webp",
         video: false,
         video_url: ""
     },
@@ -69,7 +69,7 @@ export const WONNING_COUPONS: WinningCoupon[] = [
         gain: 2197351.78,
         date: "05/08/2026",
         video: false,
-        image_url: "/assets/won_6.webp",
+        image_url: "/assets/wons_6.webp",
         video_url: ""
     },
     {
@@ -79,7 +79,7 @@ export const WONNING_COUPONS: WinningCoupon[] = [
         gain: 2010655.55,
         date: "03/08/2026",
         video: false,
-        image_url: "/assets/won_7.webp",
+        image_url: "/assets/wons_7.webp",
         video_url: ""
     },
 ];
