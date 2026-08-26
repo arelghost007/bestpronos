@@ -80,7 +80,7 @@ export default function Hero() {
 
           <div className="ticket-overlay">
             <p className="unlock-hint">
-              Rejoins le groupe <span>WhatsApp</span> pour débloquer les matchs
+              Rejoins la chaîne <span>WhatsApp</span> pour débloquer les matchs
             </p>
           </div>
           <div className="ticket-glow"></div>
