@@ -218,20 +218,6 @@ export default function ScaleCarousel({ winCoupons, whatsappLink }: ScaleCarouse
                       )}
 
                       {/* N'affiche le bouton play que si une vidéo existe */}
-                      {coupon.video && (
-                        <button
-                          className="play-btn"
-                          onClick={() => setActiveVideo(coupon.video_url)}
-                          aria-label="Voir la vidéo du résultat"
-                        >
-                          <span className="play-btn__circle">
-                            <svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
-                              <polygon points="2,1 9,5 2,9" />
-                            </svg>
-                          </span>
-                          Voir le résultat
-                        </button>
-                      )}
                     </div>
 
                     <div className="win-card-content">
