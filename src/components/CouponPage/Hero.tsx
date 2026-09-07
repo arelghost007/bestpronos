@@ -48,7 +48,7 @@ export default function Hero() {
 
       <p className="sub">
         Coupon analysé • <strong>Cote élevée</strong> • Disponible uniquement
-        dans notre gr WhatsApp
+        dans notre groupe WhatsApp
       </p>
 
       <div className="ticket-wrap">
