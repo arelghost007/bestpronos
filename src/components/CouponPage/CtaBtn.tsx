@@ -20,7 +20,7 @@ function CtaBtn({ whatsappUrl }: CtaBtnProps) {
     // Vérification propre si fbq est chargé dans le navigateur
     if (typeof window !== "undefined" && window.fbq) {
       window.fbq("track", "Contact", {
-        content_name: "Rejoindre la chaîne WhatsApp",
+        content_name: "Rejoindre le groupe WhatsApp",
         content_category: "Community"
       }); 
       // console.log("Meta Pixel: Événement Contact envoyé !"); // Pour vos tests en local
@@ -37,7 +37,7 @@ function CtaBtn({ whatsappUrl }: CtaBtnProps) {
         onClick={handleWhatsAppClick}
       >
         <span className="btn-icon"><SquareArrowRightEnter size={18} /></span>
-        Rejoindre la chaîne WhatsApp
+        Rejoindre le groupe WhatsApp
       </a>
     </div>
   );

@@ -7,7 +7,6 @@ import { CircleCheckBig, SquareArrowRightEnter, Trophy } from "lucide-react";
 import { WinningCoupon } from "@/types/dataTypes";
 import CtaBtn from "../CouponPage/CtaBtn";
 
-
 // Interface pour encapsuler proprement les props du composant
 interface ScaleCarouselProps {
   winCoupons: WinningCoupon[];
@@ -23,7 +22,9 @@ interface VideoPopupProps {
 
 const VideoPopup = ({ videoUrl, onClose, whatsappLink }: VideoPopupProps) => {
   useEffect(() => {
-    const handleKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
     window.addEventListener("keydown", handleKey);
     document.body.style.overflow = "hidden";
     return () => {
@@ -35,12 +36,29 @@ const VideoPopup = ({ videoUrl, onClose, whatsappLink }: VideoPopupProps) => {
   return (
     <div className="vp-backdrop" onClick={onClose}>
       <div className="vp-modal" onClick={(e) => e.stopPropagation()}>
-        <button className="vp-close" onClick={onClose} aria-label="Fermer">✕</button>
-        <video className="vp-video" src={videoUrl} autoPlay controls playsInline/>
+        <button className="vp-close" onClick={onClose} aria-label="Fermer">
+          ✕
+        </button>
+        <video
+          className="vp-video"
+          src={videoUrl}
+          autoPlay
+          controls
+          playsInline
+        />
         <div className="vp-label">
-          <Trophy size={15} color="#F5A623" strokeWidth={1.75} absoluteStrokeWidth /> Résultat du coupon &nbsp;·&nbsp; <span>chaîne VIP</span>
+          <Trophy
+            size={15}
+            color="#F5A623"
+            strokeWidth={1.75}
+            absoluteStrokeWidth
+          />{" "}
+          Résultat du coupon &nbsp;·&nbsp; <span>gr VIP</span>
         </div>
-        <div className="flex justify-center items-center" style={{ padding: '16px' }}>
+        <div
+          className="flex justify-center items-center"
+          style={{ padding: "16px" }}
+        >
           <CtaBtn whatsappUrl={whatsappLink} />
         </div>
       </div>
@@ -50,7 +68,10 @@ const VideoPopup = ({ videoUrl, onClose, whatsappLink }: VideoPopupProps) => {
 
 /* ─── COMPONENT ─────────────────────────────────────────────────────────────── */
 // 2. Correction ici : On destructure proprement l'objet props { winCoupons }
-export default function ScaleCarousel({ winCoupons, whatsappLink }: ScaleCarouselProps) {
+export default function ScaleCarousel({
+  winCoupons,
+  whatsappLink,
+}: ScaleCarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
     align: "center",
@@ -65,7 +86,10 @@ export default function ScaleCarousel({ winCoupons, whatsappLink }: ScaleCarouse
 
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
-  const scrollTo = useCallback((index: number) => emblaApi?.scrollTo(index), [emblaApi]);
+  const scrollTo = useCallback(
+    (index: number) => emblaApi?.scrollTo(index),
+    [emblaApi],
+  );
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -188,7 +212,11 @@ export default function ScaleCarousel({ winCoupons, whatsappLink }: ScaleCarouse
       `}</style>
 
       {activeVideo && (
-        <VideoPopup videoUrl={activeVideo} onClose={() => setActiveVideo(null)} whatsappLink={whatsappLink} />
+        <VideoPopup
+          videoUrl={activeVideo}
+          onClose={() => setActiveVideo(null)}
+          whatsappLink={whatsappLink}
+        />
       )}
 
       <div className="carousel-container">
@@ -222,7 +250,9 @@ export default function ScaleCarousel({ winCoupons, whatsappLink }: ScaleCarouse
 
                     <div className="win-card-content">
                       <div className="win-card-header">
-                        <div className="badge-valid"><CircleCheckBig size={16} color="#25D366" /> VALIDÉ</div>
+                        <div className="badge-valid">
+                          <CircleCheckBig size={16} color="#25D366" /> VALIDÉ
+                        </div>
                         <div className="win-date">{coupon.date || "—"}</div>
                       </div>
 
@@ -237,12 +267,14 @@ export default function ScaleCarousel({ winCoupons, whatsappLink }: ScaleCarouse
                         </div>
                         <div className="win-stat">
                           <div className="s-label">Gain</div>
-                          <div className="s-val green">{coupon.gain || "—"}</div>
+                          <div className="s-val green">
+                            {coupon.gain || "—"}
+                          </div>
                         </div>
                       </div>
 
                       <div className="win-card-footer">
-                        Partagé dans la chaîne <span>VIP</span> avant les matchs
+                        Partagé dans le groupe <span>VIP</span> avant les matchs
                       </div>
                     </div>
                   </div>
@@ -252,8 +284,20 @@ export default function ScaleCarousel({ winCoupons, whatsappLink }: ScaleCarouse
           </div>
         </div>
 
-        <button className="carousel-button prev" onClick={scrollPrev} aria-label="Précédent">←</button>
-        <button className="carousel-button next" onClick={scrollNext} aria-label="Suivant">→</button>
+        <button
+          className="carousel-button prev"
+          onClick={scrollPrev}
+          aria-label="Précédent"
+        >
+          ←
+        </button>
+        <button
+          className="carousel-button next"
+          onClick={scrollNext}
+          aria-label="Suivant"
+        >
+          →
+        </button>
 
         <div className="pagination" role="tablist">
           {scrollSnaps.map((_, index) => (

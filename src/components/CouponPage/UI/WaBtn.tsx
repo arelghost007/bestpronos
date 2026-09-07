@@ -1,7 +1,19 @@
 import { MessageCircle } from "lucide-react";
 import { useState } from "react";
 
-export function WaBtn({ label = "Rejoindre la chaîne WhatsApp", large = false, full = false, WA_URL, G }:{ label?: string; large?: boolean; full?: boolean; WA_URL: string; G: string }) {
+export function WaBtn({
+  label = "Rejoindre le groupe WhatsApp",
+  large = false,
+  full = false,
+  WA_URL,
+  G,
+}: {
+  label?: string;
+  large?: boolean;
+  full?: boolean;
+  WA_URL: string;
+  G: string;
+}) {
   const [h, setH] = useState(false);
   return (
     <a
@@ -11,8 +23,11 @@ export function WaBtn({ label = "Rejoindre la chaîne WhatsApp", large = false, 
       onMouseEnter={() => setH(true)}
       onMouseLeave={() => setH(false)}
       style={{
-        display: "inline-flex", alignItems: "center", justifyContent: "center",
-        gap: 10, textDecoration: "none",
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 10,
+        textDecoration: "none",
         background: h ? "#16a34a" : G,
         color: "#fff",
         fontFamily: "'Syne', sans-serif",
@@ -26,14 +41,19 @@ export function WaBtn({ label = "Rejoindre la chaîne WhatsApp", large = false, 
           : "0 6px 24px rgba(34,197,94,0.28)",
         transform: h ? "translateY(-2px)" : "translateY(0)",
         transition: "all 0.2s ease",
-        position: "relative", overflow: "hidden",
+        position: "relative",
+        overflow: "hidden",
       }}
     >
-      <span style={{
-        position: "absolute", inset: 0,
-        background: "linear-gradient(135deg,rgba(255,255,255,0.14) 0%,transparent 55%)",
-        pointerEvents: "none",
-      }} />
+      <span
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "linear-gradient(135deg,rgba(255,255,255,0.14) 0%,transparent 55%)",
+          pointerEvents: "none",
+        }}
+      />
       <MessageCircle size={large ? 22 : 17} />
       {label}
     </a>
