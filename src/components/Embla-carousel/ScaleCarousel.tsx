@@ -53,7 +53,7 @@ const VideoPopup = ({ videoUrl, onClose, whatsappLink }: VideoPopupProps) => {
             strokeWidth={1.75}
             absoluteStrokeWidth
           />{" "}
-          Résultat du coupon &nbsp;·&nbsp; <span>gr VIP</span>
+          Résultat du coupon &nbsp;·&nbsp; <span>groupe VIP</span>
         </div>
         <div
           className="flex justify-center items-center"
