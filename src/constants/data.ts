@@ -8,7 +8,7 @@ export const COUPON_DATA: CouponData = {
   date: "12/09/2026",
   image_url: "/assets/coupons_jour.webp",
   whatsapp_link:
-    "https://chat.whatsapp.com/FXZB2Nl17WU0V3qYAEUnN9?s=cl&p=i&mlu=4&ilr=4",
+    "https://chat.whatsapp.com/DbQx6luM8ju1mz6MP0iHGh?s=cl&p=i&mlu=4&ilr=4",
 };
 
 export const WONNING_COUPONS: WinningCoupon[] = [
