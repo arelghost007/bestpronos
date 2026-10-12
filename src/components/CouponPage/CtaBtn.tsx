@@ -16,16 +16,31 @@ interface CtaBtnProps {
 
 function CtaBtn({ whatsappUrl }: CtaBtnProps) {
 
-  const handleWhatsAppClick = () => {
-    // Vérification propre si fbq est chargé dans le navigateur
-    if (typeof window !== "undefined" && window.fbq) {
-      window.fbq("track", "Contact", {
+const handleWhatsAppClick = () => {
+  if (typeof window !== "undefined" && (window as any).fbq) {
+    // 1. Créer un ID unique pour cette interaction spécifique
+    const eventId = `contact_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
+
+    // 2. Envoyer l'événement Pixel côté client avec l'eventID
+    (window as any).fbq(
+      "track",
+      "Contact",
+      {
         content_name: "Rejoindre le groupe WhatsApp",
-        content_category: "Community"
-      }); 
-      // console.log("Meta Pixel: Événement Contact envoyé !"); // Pour vos tests en local
-    }
-  };
+        content_category: "Community",
+      },
+      { eventID: eventId },
+    ); // <--- Clé de déduplication ajoutée ici
+
+    // 3. Si tu envoies aussi via CAPI côté serveur, passe le MÊME `eventId` à ton API :
+    /*
+    fetch('/api/meta-conversions', {
+      method: 'POST',
+      body: JSON.stringify({ eventName: 'Contact', eventId: eventId })
+    });
+    */
+  }
+};
 
   return (
     <div className="cta-group">
