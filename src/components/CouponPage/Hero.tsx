@@ -111,7 +111,7 @@ export default function Hero() {
             <SquareCheckBig size={18} />
           </span>
           <span>
-            <strong>14</strong> coupons validés cette semaine
+            <strong>23</strong> coupons validés cette semaine
           </span>
         </div>
         <div className="proof-item">
@@ -119,7 +119,7 @@ export default function Hero() {
             <Users size={18} />
           </span>
           <span>
-            <strong>+2 500</strong> membres actifs
+            <strong>+4 000</strong> membres actifs
           </span>
         </div>
       </div>
