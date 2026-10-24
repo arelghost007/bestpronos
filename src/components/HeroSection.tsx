@@ -24,15 +24,15 @@ export default function HeroSection() {
     <>
       <style>{`
 
-        :root {
-          --gold: #F5A623;
-          --gold-light: #FFD580;
-          --gold-dark: #C8851A;
-          --dark-bg: #0A0B0F;
-          --dark-card: #12141A;
-          --dark-border: #1E2230;
-          --text-muted: #8B92A5;
-        }
+:root {
+  --gold: #3B82F6;
+  --gold-light: #93C5FD;
+  --gold-dark: #1D4ED8;
+  --dark-bg: #080D18;
+  --dark-card: #101827;
+  --dark-border: #1E2B40;
+  --text-muted: #94A3B8;
+}
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -529,16 +529,16 @@ export default function HeroSection() {
       `}</style>
 
       <div className="hero-root" ref={heroRef}>
-
         {/* ── NAV ── */}
         <nav className="hero-nav">
-          <div className="nav-logo">Promo<span>Bet</span></div>
+          <div className="nav-logo">
+            Promo<span>Bet</span>
+          </div>
           <div className="nav-badge">🔒 Code vérifié</div>
         </nav>
 
         {/* ── MAIN ── */}
         <div className="hero-body">
-
           {/* LEFT */}
           <div className="hero-left">
             <div className={`tag-line ${visible ? "visible" : ""}`}>
@@ -553,9 +553,15 @@ export default function HeroSection() {
             </h1>
 
             <div className={`hero-subtitle ${visible ? "visible" : ""}`}>
-              <span className="pill"><span className="pill-icon">⚡</span> Inscription rapide</span>
-              <span className="pill"><span className="pill-icon">🎁</span> Bonus immédiat</span>
-              <span className="pill"><span className="pill-icon">📱</span> Compatible mobile</span>
+              <span className="pill">
+                <span className="pill-icon">⚡</span> Inscription rapide
+              </span>
+              <span className="pill">
+                <span className="pill-icon">🎁</span> Bonus immédiat
+              </span>
+              <span className="pill">
+                <span className="pill-icon">📱</span> Compatible mobile
+              </span>
             </div>
 
             <div className={`cta-group ${visible ? "visible" : ""}`}>
@@ -586,9 +592,12 @@ export default function HeroSection() {
             <div className="float-badge">✦ Sans dépôt minimum</div>
             <div className="bonus-card">
               <p className="bonus-label">Bonus de bienvenue</p>
-              <div className="bonus-pct"><sup>+</sup>200<sup>%</sup></div>
+              <div className="bonus-pct">
+                <sup>+</sup>200<sup>%</sup>
+              </div>
               <p className="bonus-sub">
-                Sur votre <strong>premier dépôt</strong><br />
+                Sur votre <strong>premier dépôt</strong>
+                <br />
                 Valable jusqu'au 31 décembre 2025
               </p>
               <div className="stats-row">
@@ -611,28 +620,67 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
-
         </div>
 
         {/* ── BOTTOM BAR ── */}
         <div className="hero-bottom">
           <div className="trust-items">
             <div className="trust-item">
-              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+              <svg
+                width="16"
+                height="16"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                />
+              </svg>
               Paiements sécurisés
             </div>
             <div className="trust-item">
-              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+              <svg
+                width="16"
+                height="16"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
               Retraits rapides
             </div>
             <div className="trust-item">
-              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+              <svg
+                width="16"
+                height="16"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                />
+              </svg>
               Support 24/7
             </div>
           </div>
-          <span className="disclaimer">18+ • Jeu responsable • Conditions applicables</span>
+          <span className="disclaimer">
+            18+ • Jeu responsable • Conditions applicables
+          </span>
         </div>
-
       </div>
     </>
   );

@@ -3,27 +3,27 @@
 import { useState } from "react";
 
 const NAV_LINKS = {
-  "Navigation": [
-    { label: "Accueil",            href: "/" },
+  Navigation: [
+    { label: "Accueil", href: "/" },
     { label: "Pourquoi ce code ?", href: "#why" },
-    { label: "Comment ça marche ?",href: "#how" },
-    { label: "Bonus & avantages",  href: "#bonus" },
-    { label: "Avis utilisateurs",  href: "#reviews" },
-    { label: "FAQ",                href: "#faq" },
+    { label: "Comment ça marche ?", href: "#how" },
+    { label: "Bonus & avantages", href: "#bonus" },
+    { label: "Avis utilisateurs", href: "#reviews" },
+    { label: "FAQ", href: "#faq" },
   ],
   "1xBet": [
-    { label: "Créer un compte",    href: "https://www.1xbet.com" },
-    { label: "Paris sportifs",     href: "https://www.1xbet.com/sport" },
-    { label: "Casino en ligne",    href: "https://www.1xbet.com/casino" },
+    { label: "Créer un compte", href: "https://www.1xbet.com" },
+    { label: "Paris sportifs", href: "https://www.1xbet.com/sport" },
+    { label: "Casino en ligne", href: "https://www.1xbet.com/casino" },
     { label: "Application mobile", href: "https://www.1xbet.com/mobile" },
-    { label: "Live betting",       href: "https://www.1xbet.com/live" },
+    { label: "Live betting", href: "https://www.1xbet.com/live" },
   ],
-  "Légal": [
-    { label: "Mentions légales",          href: "/mentions-legales" },
+  Légal: [
+    { label: "Mentions légales", href: "/mentions-legales" },
     { label: "Politique de confidentialité", href: "/confidentialite" },
     { label: "Conditions d'utilisation", href: "/conditions" },
-    { label: "Jeu responsable",           href: "/jeu-responsable" },
-    { label: "Cookies",                   href: "/cookies" },
+    { label: "Jeu responsable", href: "/jeu-responsable" },
+    { label: "Cookies", href: "/cookies" },
   ],
 };
 
@@ -80,7 +80,7 @@ const SOCIALS = [
   },
 ];
 
-function SocialButton({ social }: { social: typeof SOCIALS[0] }) {
+function SocialButton({ social }: { social: (typeof SOCIALS)[0] }) {
   const [hovered, setHovered] = useState(false);
   return (
     <a
@@ -91,12 +91,15 @@ function SocialButton({ social }: { social: typeof SOCIALS[0] }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        width: 40, height: 40,
+        width: 40,
+        height: 40,
         borderRadius: 10,
         border: `1px solid ${hovered ? social.color + "60" : "#1E2230"}`,
         background: hovered ? social.color + "18" : "#12141A",
         color: hovered ? social.color : "#8B92A5",
-        display: "flex", alignItems: "center", justifyContent: "center",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
         textDecoration: "none",
         transform: hovered ? "translateY(-3px)" : "translateY(0)",
         boxShadow: hovered ? `0 8px 20px ${social.color}22` : "none",
@@ -121,19 +124,26 @@ function FooterLink({ href, label }: { href: string; label: string }) {
       onMouseLeave={() => setHovered(false)}
       style={{
         fontSize: 13,
-        color: hovered ? "#F5A623" : "#8B92A5",
+        color: hovered ? "#3B82F6" : "#8B92A5",
         textDecoration: "none",
         fontFamily: "'Outfit', sans-serif",
         fontWeight: 500,
-        display: "flex", alignItems: "center", gap: 6,
+        display: "flex",
+        alignItems: "center",
+        gap: 6,
         transition: "color 0.2s",
       }}
     >
-      <span style={{
-        width: 5, height: 5, borderRadius: "50%",
-        background: hovered ? "#F5A623" : "#2a2d38",
-        flexShrink: 0, transition: "background 0.2s",
-      }} />
+      <span
+        style={{
+          width: 5,
+          height: 5,
+          borderRadius: "50%",
+          background: hovered ? "#3B82F6" : "#2a2d38",
+          flexShrink: 0,
+          transition: "background 0.2s",
+        }}
+      />
       {label}
     </a>
   );
@@ -159,48 +169,83 @@ export default function Footer() {
         }
       `}</style>
 
-      <footer style={{
-        background: "#080910",
-        borderTop: "1px solid #1E2230",
-        fontFamily: "'Outfit', sans-serif",
-      }}>
-
+      <footer
+        style={{
+          background: "#080910",
+          borderTop: "1px solid #1E2230",
+          fontFamily: "'Outfit', sans-serif",
+        }}
+      >
         {/* ── CTA Banner ── */}
-        <div style={{
-          background: "linear-gradient(135deg, #12141A 0%, #161926 100%)",
-          borderBottom: "1px solid #1E2230",
-          padding: "40px 48px",
-          position: "relative",
-          overflow: "hidden",
-        }}>
-          <div style={{
-            position: "absolute", top: 0, left: 0, right: 0, height: 2,
-            background: "linear-gradient(90deg, transparent, #F5A623, transparent)",
-          }} />
-          <div style={{
-            position: "absolute", right: "-5%", top: "50%", transform: "translateY(-50%)",
-            width: 300, height: 300,
-            background: "radial-gradient(circle, rgba(245,166,35,0.07) 0%, transparent 65%)",
-            pointerEvents: "none",
-          }} />
-          <div style={{
-            maxWidth: 1100, margin: "0 auto",
-            display: "flex", alignItems: "center",
-            justifyContent: "space-between", gap: 24,
-            flexWrap: "wrap", position: "relative", zIndex: 1,
-          }}>
+        <div
+          style={{
+            background: "linear-gradient(135deg, #12141A 0%, #161926 100%)",
+            borderBottom: "1px solid #1E2230",
+            padding: "40px 48px",
+            position: "relative",
+            overflow: "hidden",
+          }}
+        >
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              height: 2,
+              background:
+                "linear-gradient(90deg, transparent, #3B82F6, transparent)",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              right: "-5%",
+              top: "50%",
+              transform: "translateY(-50%)",
+              width: 300,
+              height: 300,
+              background:
+                "radial-gradient(circle, rgba(245,166,35,0.07) 0%, transparent 65%)",
+              pointerEvents: "none",
+            }}
+          />
+          <div
+            style={{
+              maxWidth: 1100,
+              margin: "0 auto",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: 24,
+              flexWrap: "wrap",
+              position: "relative",
+              zIndex: 1,
+            }}
+          >
             <div>
-              <div style={{
-                fontFamily: "'Bebas Neue', sans-serif",
-                fontSize: "clamp(24px, 3vw, 36px)",
-                color: "#fff", letterSpacing: "1px", marginBottom: 6,
-              }}>
+              <div
+                style={{
+                  fontFamily: "'Bebas Neue', sans-serif",
+                  fontSize: "clamp(24px, 3vw, 36px)",
+                  color: "#fff",
+                  letterSpacing: "1px",
+                  marginBottom: 6,
+                }}
+              >
                 Prêt à activer ton{" "}
-                <span style={{ color: "#F5A623" }}>+130% de bonus</span> ?
+                <span style={{ color: "#3B82F6" }}>+130% de bonus</span> ?
               </div>
               <div style={{ fontSize: 14, color: "#8B92A5" }}>
                 Inscription gratuite · Bonus immédiat · Code{" "}
-                <span style={{ color: "#F5A623", fontWeight: 700, fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "1px" }}>
+                <span
+                  style={{
+                    color: "#3B82F6",
+                    fontWeight: 700,
+                    fontFamily: "'Bebas Neue', sans-serif",
+                    letterSpacing: "1px",
+                  }}
+                >
                   BONUS130
                 </span>
               </div>
@@ -210,25 +255,43 @@ export default function Footer() {
         </div>
 
         {/* ── Main footer ── */}
-        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "60px 48px 40px" }}>
-          <div className="footer-main" style={{ display: "flex", gap: 60, marginBottom: 52 }}>
-
+        <div
+          style={{
+            maxWidth: 1100,
+            margin: "0 auto",
+            padding: "60px 48px 40px",
+          }}
+        >
+          <div
+            className="footer-main"
+            style={{ display: "flex", gap: 60, marginBottom: 52 }}
+          >
             {/* Brand column */}
             <div style={{ minWidth: 220, flexShrink: 0 }}>
               {/* Logo */}
-              <div style={{
-                fontFamily: "'Bebas Neue', sans-serif",
-                fontSize: 28, letterSpacing: "2px",
-                color: "#fff", marginBottom: 14,
-              }}>
-                Promo<span style={{ color: "#F5A623" }}>Bet</span>
+              <div
+                style={{
+                  fontFamily: "'Bebas Neue', sans-serif",
+                  fontSize: 28,
+                  letterSpacing: "2px",
+                  color: "#fff",
+                  marginBottom: 14,
+                }}
+              >
+                Promo<span style={{ color: "#3B82F6" }}>Bet</span>
               </div>
 
-              <p style={{
-                fontSize: 13, lineHeight: 1.7, color: "#8B92A5",
-                marginBottom: 24, maxWidth: 240,
-              }}>
-                Site affilié indépendant. Nous aidons les parieurs à obtenir le meilleur bonus de bienvenue sur 1xBet.
+              <p
+                style={{
+                  fontSize: 13,
+                  lineHeight: 1.7,
+                  color: "#8B92A5",
+                  marginBottom: 24,
+                  maxWidth: 240,
+                }}
+              >
+                Site affilié indépendant. Nous aidons les parieurs à obtenir le
+                meilleur bonus de bienvenue sur 1xBet.
               </p>
 
               {/* Socials */}
@@ -239,13 +302,18 @@ export default function Footer() {
               </div>
 
               {/* Contact block */}
-              <div style={{
-                marginTop: 24,
-                background: "#12141A",
-                border: "1px solid #1E2230",
-                borderRadius: 12, padding: "14px 16px",
-                display: "flex", flexDirection: "column", gap: 10,
-              }}>
+              <div
+                style={{
+                  marginTop: 24,
+                  background: "#12141A",
+                  border: "1px solid #1E2230",
+                  borderRadius: 12,
+                  padding: "14px 16px",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 10,
+                }}
+              >
                 <ContactItem
                   icon="💬"
                   label="Telegram"
@@ -266,15 +334,25 @@ export default function Footer() {
             <div className="footer-nav-grid" style={{ flex: 1 }}>
               {Object.entries(NAV_LINKS).map(([title, links]) => (
                 <div key={title}>
-                  <div style={{
-                    fontFamily: "'Bebas Neue', sans-serif",
-                    fontSize: 16, letterSpacing: "1.5px",
-                    color: "#fff", marginBottom: 18,
-                    textTransform: "uppercase",
-                  }}>
+                  <div
+                    style={{
+                      fontFamily: "'Bebas Neue', sans-serif",
+                      fontSize: 16,
+                      letterSpacing: "1.5px",
+                      color: "#fff",
+                      marginBottom: 18,
+                      textTransform: "uppercase",
+                    }}
+                  >
                     {title}
                   </div>
-                  <div style={{ display: "flex", flexDirection: "column", gap: 11 }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 11,
+                    }}
+                  >
                     {links.map((link, i) => (
                       <FooterLink key={i} href={link.href} label={link.label} />
                     ))}
@@ -285,29 +363,61 @@ export default function Footer() {
           </div>
 
           {/* ── Responsible gambling strip ── */}
-          <div style={{
-            background: "#12141A",
-            border: "1px solid #1E2230",
-            borderRadius: 14, padding: "18px 24px",
-            display: "flex", alignItems: "center", gap: 14,
-            marginBottom: 36, flexWrap: "wrap",
-          }}>
+          <div
+            style={{
+              background: "#12141A",
+              border: "1px solid #1E2230",
+              borderRadius: 14,
+              padding: "18px 24px",
+              display: "flex",
+              alignItems: "center",
+              gap: 14,
+              marginBottom: 36,
+              flexWrap: "wrap",
+            }}
+          >
             <span style={{ fontSize: 22, flexShrink: 0 }}>⚠️</span>
-            <p style={{ fontSize: 12, color: "#8B92A5", lineHeight: 1.65, margin: 0, flex: 1 }}>
-              <strong style={{ color: "#C8CDD8" }}>Jeu responsable.</strong>{" "}
-              Les jeux d&apos;argent peuvent créer une dépendance. Jouez de manière responsable et ne misez que ce que vous pouvez vous permettre de perdre. Interdit aux moins de 18 ans.
-              {" "}<a href="/jeu-responsable" style={{ color: "#F5A623", textDecoration: "none" }}>En savoir plus →</a>
+            <p
+              style={{
+                fontSize: 12,
+                color: "#8B92A5",
+                lineHeight: 1.65,
+                margin: 0,
+                flex: 1,
+              }}
+            >
+              <strong style={{ color: "#C8CDD8" }}>Jeu responsable.</strong> Les
+              jeux d&apos;argent peuvent créer une dépendance. Jouez de manière
+              responsable et ne misez que ce que vous pouvez vous permettre de
+              perdre. Interdit aux moins de 18 ans.{" "}
+              <a
+                href="/jeu-responsable"
+                style={{ color: "#3B82F6", textDecoration: "none" }}
+              >
+                En savoir plus →
+              </a>
             </p>
-            <div style={{
-              display: "flex", gap: 10, flexShrink: 0, flexWrap: "wrap",
-            }}>
+            <div
+              style={{
+                display: "flex",
+                gap: 10,
+                flexShrink: 0,
+                flexWrap: "wrap",
+              }}
+            >
               {["18+", "🔒 SSL", "✓ Licencié"].map((badge, i) => (
-                <span key={i} style={{
-                  background: "#1E2230",
-                  border: "1px solid #2a2d38",
-                  borderRadius: 6, padding: "4px 10px",
-                  fontSize: 11, fontWeight: 600, color: "#8B92A5",
-                }}>
+                <span
+                  key={i}
+                  style={{
+                    background: "#1E2230",
+                    border: "1px solid #2a2d38",
+                    borderRadius: 6,
+                    padding: "4px 10px",
+                    fontSize: 11,
+                    fontWeight: 600,
+                    color: "#8B92A5",
+                  }}
+                >
                   {badge}
                 </span>
               ))}
@@ -327,20 +437,28 @@ export default function Footer() {
             }}
           >
             <div style={{ fontSize: 12, color: "#444" }}>
-              © {new Date().getFullYear()} PromoBet. Site affilié indépendant non lié à 1xBet Corp.
+              © {new Date().getFullYear()} PromoBet. Site affilié indépendant
+              non lié à 1xBet Corp.
             </div>
             <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
               {[
-                { label: "Mentions légales",   href: "/mentions-legales" },
-                { label: "Confidentialité",     href: "/confidentialite" },
-                { label: "Cookies",             href: "/cookies" },
+                { label: "Mentions légales", href: "/mentions-legales" },
+                { label: "Confidentialité", href: "/confidentialite" },
+                { label: "Cookies", href: "/cookies" },
               ].map((link, i) => (
                 <a
                   key={i}
                   href={link.href}
-                  style={{ fontSize: 12, color: "#444", textDecoration: "none", transition: "color 0.2s" }}
-                  onMouseEnter={e => (e.currentTarget.style.color = "#8B92A5")}
-                  onMouseLeave={e => (e.currentTarget.style.color = "#444")}
+                  style={{
+                    fontSize: 12,
+                    color: "#444",
+                    textDecoration: "none",
+                    transition: "color 0.2s",
+                  }}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.color = "#8B92A5")
+                  }
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "#444")}
                 >
                   {link.label}
                 </a>
@@ -364,16 +482,21 @@ function CtaBannerButton() {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        display: "inline-flex", alignItems: "center", gap: 10,
-        background: hovered ? "#FFD580" : "#F5A623",
+        display: "inline-flex",
+        alignItems: "center",
+        gap: 10,
+        background: hovered ? "#FFD580" : "#3B82F6",
         color: "#0A0B0F",
         fontFamily: "'Outfit', sans-serif",
-        fontSize: 15, fontWeight: 700,
-        padding: "15px 36px", borderRadius: 12,
+        fontSize: 15,
+        fontWeight: 700,
+        padding: "15px 36px",
+        borderRadius: 12,
         textDecoration: "none",
         transform: hovered ? "translateY(-2px)" : "translateY(0)",
         boxShadow: hovered ? "0 12px 30px rgba(245,166,35,0.38)" : "none",
-        transition: "all 0.2s", whiteSpace: "nowrap",
+        transition: "all 0.2s",
+        whiteSpace: "nowrap",
         flexShrink: 0,
       }}
     >
@@ -382,7 +505,17 @@ function CtaBannerButton() {
   );
 }
 
-function ContactItem({ icon, label, value, href }: { icon: React.ReactNode; label: string; value: string; href: string }) {
+function ContactItem({
+  icon,
+  label,
+  value,
+  href,
+}: {
+  icon: React.ReactNode;
+  label: string;
+  value: string;
+  href: string;
+}) {
   const [hovered, setHovered] = useState(false);
   return (
     <a
@@ -392,20 +525,33 @@ function ContactItem({ icon, label, value, href }: { icon: React.ReactNode; labe
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        display: "flex", alignItems: "center", gap: 10,
+        display: "flex",
+        alignItems: "center",
+        gap: 10,
         textDecoration: "none",
       }}
     >
       <span style={{ fontSize: 18 }}>{icon}</span>
       <div>
-        <div style={{ fontSize: 10, color: "#555", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.5px" }}>
+        <div
+          style={{
+            fontSize: 10,
+            color: "#555",
+            fontWeight: 600,
+            textTransform: "uppercase",
+            letterSpacing: "0.5px",
+          }}
+        >
           {label}
         </div>
-        <div style={{
-          fontSize: 13, fontWeight: 600,
-          color: hovered ? "#F5A623" : "#C8CDD8",
-          transition: "color 0.2s",
-        }}>
+        <div
+          style={{
+            fontSize: 13,
+            fontWeight: 600,
+            color: hovered ? "#3B82F6" : "#C8CDD8",
+            transition: "color 0.2s",
+          }}
+        >
           {value}
         </div>
       </div>

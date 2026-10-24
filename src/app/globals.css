@@ -2,13 +2,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --gold: #F5A623;
-  --gold-light: #FFD580;
-  --gold-dark: #C8851A;
-  --dark-bg: #0A0B0F;
-  --dark-card: #12141A;
-  --dark-border: #1E2230;
-  --text-muted: #8B92A5;
+  --gold: #3B82F6;
+  --gold-light: #93C5FD;
+  --gold-dark: #1D4ED8;
+  --dark-bg: #080D18;
+  --dark-card: #101827;
+  --dark-border: #1E2B42;
+  --text-muted: #8B9BB4;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; } 
@@ -30,13 +30,13 @@
 
 /* app/globals.css */
 :root {
-  --gold: #F5A623;
-  --gold-light: #FFD580;
-  --gold-dark: #C8851A;
-  --dark-bg: #0A0B0F;
-  --dark-card: #12141A;
-  --dark-border: #1E2230;
-  --text-muted: #8B92A5;
+  --gold: #3B82F6;
+  --gold-light: #93C5FD;
+  --gold-dark: #1D4ED8;
+  --dark-bg: #080D18;
+  --dark-card: #101827;
+  --dark-border: #1E2B42;
+  --text-muted: #8B9BB4;
   --wa-green: #25D366;
   --wa-dark: #128C7E;
   --danger-red: #FF4444;
@@ -87,7 +87,7 @@ body::before {
   align-items: center;
   gap: 6px;
   background: rgba(245, 166, 35, 0.12);
-  border: 1px solid rgba(245, 166, 35, 0.35);
+  border: 1px solid rgba(59, 130, 246, 0.18);
   color: var(--gold);
   font-size: 12px;
   font-weight: 600;
@@ -140,7 +140,7 @@ body::before {
   transform: translateX(-50%);
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(245, 166, 35, 0.18) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.18) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -149,7 +149,7 @@ body::before {
   line-height: 1;
   color: #fff;
   margin: 16px 0 12px;
-  text-shadow: 0 0 40px rgba(245, 166, 35, 0.25);
+  text-shadow: 0 0 40px rgba(59, 130, 246, 0.25);
 }
 
 .hero h1 span {
@@ -223,8 +223,8 @@ body::before {
 }
 
 .ticket-row .odds {
-  background: rgba(245, 166, 35, 0.1);
-  border: 1px solid rgba(245, 166, 35, 0.25);
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.25);
   color: var(--gold);
   font-weight: 700;
   font-size: 13px;

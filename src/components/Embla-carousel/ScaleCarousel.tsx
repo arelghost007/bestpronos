@@ -49,7 +49,7 @@ const VideoPopup = ({ videoUrl, onClose, whatsappLink }: VideoPopupProps) => {
         <div className="vp-label">
           <Trophy
             size={15}
-            color="#F5A623"
+            color="#3B82F6"
             strokeWidth={1.75}
             absoluteStrokeWidth
           />{" "}
@@ -172,10 +172,10 @@ export default function ScaleCarousel({
         .s-val { font-family: 'Bebas Neue', sans-serif; font-size: 20px; color: #FFD580; letter-spacing: 0.04em; }
         .s-val.green { color: #25D366; }
         .win-card-footer { padding: 10px 16px; background: rgba(245,166,35,0.04); border-top: 1px solid #1E2230; font-size: 11px; color: #8B92A5; text-align: center; font-family: 'Outfit', sans-serif; }
-        .win-card-footer span { color: #F5A623; font-weight: 600; }
+        .win-card-footer span { color: #3B82F6; font-weight: 600; }
         .carousel-button {
           position: absolute; top: 50%; transform: translateY(-60%); width: 36px; height: 36px; border-radius: 50%;
-          border: 1px solid #1E2230; background: rgba(18,20,26,0.92); color: #F5A623; font-size: 16px;
+          border: 1px solid #1E2230; background: rgba(18,20,26,0.92); color: #3B82F6; font-size: 16px;
           display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10;
           transition: background 0.2s, border-color 0.2s; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); line-height: 1;
         }
@@ -184,12 +184,12 @@ export default function ScaleCarousel({
         .carousel-button.next { right: 4px; }
         .pagination { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
         .pagination-bullet { width: 8px; height: 8px; border-radius: 100px; border: none; background: #1E2230; cursor: pointer; padding: 0; transition: width 0.3s ease, background 0.3s ease; }
-        .pagination-bullet.active { width: 24px; background: #F5A623; }
+        .pagination-bullet.active { width: 24px; background: #3B82F6; }
         @media (max-width: 400px) { .embla__slide { flex: 0 0 88%; } }
 
         .play-btn {
           position: absolute; bottom: 14px; right: 14px; z-index: 2; display: flex; align-items: center; gap: 8px;
-          background: rgba(10,11,15,0.68); border: 1px solid rgba(245,166,35,0.55); color: #F5A623;
+          background: rgba(10,11,15,0.68); border: 1px solid rgba(245,166,35,0.55); color: #3B82F6;
           font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.05em;
           padding: 8px 14px 8px 8px; border-radius: 100px; cursor: pointer; backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px); transition: background 0.2s, border-color 0.2s, transform 0.15s;
@@ -197,7 +197,7 @@ export default function ScaleCarousel({
         }
         .play-btn:hover { background: rgba(245,166,35,0.16); border-color: rgba(245,166,35,0.9); transform: scale(1.04); }
         .play-btn:active { transform: scale(0.97); }
-        .play-btn__circle { width: 24px; height: 24px; border-radius: 50%; background: #F5A623; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .play-btn__circle { width: 24px; height: 24px; border-radius: 50%; background: #3B82F6; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .play-btn__circle svg { width: 9px; height: 9px; fill: #0A0B0F; margin-left: 2px; }
 
         .vp-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px; animation: vp-in 0.22s ease; }
@@ -205,10 +205,10 @@ export default function ScaleCarousel({
         .vp-modal { position: relative; width: 100%; max-width: 480px; background: #12141A; border: 1px solid rgba(245,166,35,0.2); border-radius: 20px; overflow: hidden; box-shadow: 0 24px 80px rgba(0,0,0,0.85), 0 0 80px rgba(245,166,35,0.06); animation: vp-up 0.28s cubic-bezier(0.25, 1, 0.5, 1); }
         @keyframes vp-up { from { transform: translateY(32px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
         .vp-close { position: absolute; top: 12px; right: 12px; z-index: 10; width: 32px; height: 32px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.14); background: rgba(10,11,15,0.75); color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(8px); transition: background 0.2s, color 0.2s; }
-        .vp-close:hover { background: rgba(245,166,35,0.2); color: #F5A623; border-color: rgba(245,166,35,0.5); }
+        .vp-close:hover { background: rgba(245,166,35,0.2); color: #3B82F6; border-color: rgba(245,166,35,0.5); }
         .vp-video { display: block; width: 100%; max-height: 72vh; background: #000; outline: none; }
         .vp-label { display: flex; align-items: center; justify-content: center; gap: 6px; padding: 12px 16px; font-family: 'Outfit', sans-serif; font-size: 12px; color: #8B92A5; text-align: center; border-top: 1px solid #1E2230; background: rgba(245,166,35,0.03); }
-        .vp-label span { color: #F5A623; font-weight: 600; }
+        .vp-label span { color: #3B82F6; font-weight: 600; }
       `}</style>
 
       {activeVideo && (

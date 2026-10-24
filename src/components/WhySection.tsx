@@ -8,7 +8,7 @@ const cards = [
     title: "Bonus augmenté",
     desc: "Grâce à mon code promo exclusif, ton bonus de bienvenue passe à +130% sur ton premier dépôt — bien au-dessus de l'offre standard.",
     highlight: "130% offerts",
-    color: "#F5A623",
+    color: "#3B82F6",
     delay: 0,
   },
   {
@@ -45,15 +45,17 @@ const cards = [
   },
 ];
 
-function Card({ card, index }: { card: typeof cards[0], index: number }) {
+function Card({ card, index }: { card: (typeof cards)[0]; index: number }) {
   const [visible, setVisible] = useState(false);
   const [hovered, setHovered] = useState(false);
   const ref = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.15 }
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
+      { threshold: 0.15 },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -78,70 +80,96 @@ function Card({ card, index }: { card: typeof cards[0], index: number }) {
       }}
     >
       {/* Top accent line */}
-      <div style={{
-        position: "absolute", top: 0, left: 0, right: 0, height: "2px",
-        background: `linear-gradient(90deg, transparent, ${card.color}, transparent)`,
-        opacity: hovered ? 1 : 0,
-        transition: "opacity 0.3s",
-      }} />
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: "2px",
+          background: `linear-gradient(90deg, transparent, ${card.color}, transparent)`,
+          opacity: hovered ? 1 : 0,
+          transition: "opacity 0.3s",
+        }}
+      />
 
       {/* Ambient glow */}
-      <div style={{
-        position: "absolute", bottom: "-40%", right: "-20%",
-        width: "180px", height: "180px",
-        background: `radial-gradient(circle, ${card.color}12 0%, transparent 70%)`,
-        pointerEvents: "none",
-        transition: "opacity 0.3s",
-        opacity: hovered ? 1 : 0.5,
-      }} />
+      <div
+        style={{
+          position: "absolute",
+          bottom: "-40%",
+          right: "-20%",
+          width: "180px",
+          height: "180px",
+          background: `radial-gradient(circle, ${card.color}12 0%, transparent 70%)`,
+          pointerEvents: "none",
+          transition: "opacity 0.3s",
+          opacity: hovered ? 1 : 0.5,
+        }}
+      />
 
       {/* Icon */}
-      <div style={{
-        fontSize: "36px",
-        marginBottom: "20px",
-        display: "inline-flex",
-        alignItems: "center",
-        justifyContent: "center",
-        width: "64px", height: "64px",
-        background: card.color + "18",
-        borderRadius: "16px",
-        border: `1px solid ${card.color}30`,
-        transform: hovered ? "scale(1.1) rotate(-4deg)" : "scale(1) rotate(0deg)",
-        transition: "transform 0.3s cubic-bezier(0.34,1.56,0.64,1)",
-      }}>
+      <div
+        style={{
+          fontSize: "36px",
+          marginBottom: "20px",
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "64px",
+          height: "64px",
+          background: card.color + "18",
+          borderRadius: "16px",
+          border: `1px solid ${card.color}30`,
+          transform: hovered
+            ? "scale(1.1) rotate(-4deg)"
+            : "scale(1) rotate(0deg)",
+          transition: "transform 0.3s cubic-bezier(0.34,1.56,0.64,1)",
+        }}
+      >
         {card.icon}
       </div>
 
       {/* Highlight badge */}
-      <div style={{
-        position: "absolute", top: "28px", right: "28px",
-        background: card.color + "18",
-        border: `1px solid ${card.color}35`,
-        color: card.color,
-        fontSize: "11px", fontWeight: 700,
-        padding: "4px 12px", borderRadius: "100px",
-        letterSpacing: "0.5px",
-        fontFamily: "'Outfit', sans-serif",
-      }}>
+      <div
+        style={{
+          position: "absolute",
+          top: "28px",
+          right: "28px",
+          background: card.color + "18",
+          border: `1px solid ${card.color}35`,
+          color: card.color,
+          fontSize: "11px",
+          fontWeight: 700,
+          padding: "4px 12px",
+          borderRadius: "100px",
+          letterSpacing: "0.5px",
+          fontFamily: "'Outfit', sans-serif",
+        }}
+      >
         {card.highlight}
       </div>
 
-      <h3 style={{
-        fontFamily: "'Bebas Neue', sans-serif",
-        fontSize: "26px",
-        letterSpacing: "0.5px",
-        color: "#fff",
-        marginBottom: "12px",
-      }}>
+      <h3
+        style={{
+          fontFamily: "'Bebas Neue', sans-serif",
+          fontSize: "26px",
+          letterSpacing: "0.5px",
+          color: "#fff",
+          marginBottom: "12px",
+        }}
+      >
         {card.title}
       </h3>
 
-      <p style={{
-        fontSize: "14px",
-        lineHeight: "1.7",
-        color: "#8B92A5",
-        fontFamily: "'Outfit', sans-serif",
-      }}>
+      <p
+        style={{
+          fontSize: "14px",
+          lineHeight: "1.7",
+          color: "#8B92A5",
+          fontFamily: "'Outfit', sans-serif",
+        }}
+      >
         {card.desc}
       </p>
     </div>
@@ -154,8 +182,10 @@ export default function WhySection() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setTitleVisible(true); },
-      { threshold: 0.3 }
+      ([entry]) => {
+        if (entry.isIntersecting) setTitleVisible(true);
+      },
+      { threshold: 0.3 },
     );
     if (titleRef.current) observer.observe(titleRef.current);
     return () => observer.disconnect();
@@ -167,7 +197,7 @@ export default function WhySection() {
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
         :root {
-          --gold: #F5A623;
+          --gold: #3B82F6;
           --dark-bg: #0A0B0F;
           --dark-card: #12141A;
           --dark-border: #1E2230;
@@ -317,32 +347,41 @@ export default function WhySection() {
 
       <section className="why-section">
         <div className="why-inner">
-
           {/* Header */}
           <div className="why-header" ref={titleRef}>
-            <div className="section-tag" style={{
-              opacity: titleVisible ? 1 : 0,
-              transform: titleVisible ? "translateY(0)" : "translateY(12px)",
-              transition: "opacity 0.6s ease, transform 0.6s ease",
-            }}>
+            <div
+              className="section-tag"
+              style={{
+                opacity: titleVisible ? 1 : 0,
+                transform: titleVisible ? "translateY(0)" : "translateY(12px)",
+                transition: "opacity 0.6s ease, transform 0.6s ease",
+              }}
+            >
               <div className="section-tag-dot" />
               <span>Avantages exclusifs</span>
             </div>
 
-            <h2 className="why-title" style={{
-              opacity: titleVisible ? 1 : 0,
-              transform: titleVisible ? "translateY(0)" : "translateY(20px)",
-              transition: "opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s",
-            }}>
+            <h2
+              className="why-title"
+              style={{
+                opacity: titleVisible ? 1 : 0,
+                transform: titleVisible ? "translateY(0)" : "translateY(20px)",
+                transition: "opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s",
+              }}
+            >
               Pourquoi utiliser <em>mon code promo</em> ?
             </h2>
 
-            <p className="why-subtitle" style={{
-              opacity: titleVisible ? 1 : 0,
-              transform: titleVisible ? "translateY(0)" : "translateY(16px)",
-              transition: "opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s",
-            }}>
-              Un simple code peut changer ton expérience sur 1xBet. Voici tout ce que tu gagnes en l'utilisant.
+            <p
+              className="why-subtitle"
+              style={{
+                opacity: titleVisible ? 1 : 0,
+                transform: titleVisible ? "translateY(0)" : "translateY(16px)",
+                transition: "opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s",
+              }}
+            >
+              Un simple code peut changer ton expérience sur 1xBet. Voici tout
+              ce que tu gagnes en l'utilisant.
             </p>
           </div>
 
@@ -355,48 +394,103 @@ export default function WhySection() {
               <div className="card-wide-inner">
                 <Card card={cards[4]} index={4} />
                 {/* Bonus: stat strip card */}
-                <div style={{
-                  background: "#12141A",
-                  border: "1px solid #1E2230",
-                  borderRadius: "20px",
-                  padding: "32px 28px",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  gap: "24px",
-                }}>
+                <div
+                  style={{
+                    background: "#12141A",
+                    border: "1px solid #1E2230",
+                    borderRadius: "20px",
+                    padding: "32px 28px",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    gap: "24px",
+                  }}
+                >
                   {[
-                    { label: "Utilisateurs actifs", value: "3 M+", color: "#F5A623" },
-                    { label: "Bonus distribués", value: "€12 M+", color: "#4FC3F7" },
-                    { label: "Taux de satisfaction", value: "96%", color: "#81C784" },
+                    {
+                      label: "Utilisateurs actifs",
+                      value: "3 M+",
+                      color: "#3B82F6",
+                    },
+                    {
+                      label: "Bonus distribués",
+                      value: "€12 M+",
+                      color: "#4FC3F7",
+                    },
+                    {
+                      label: "Taux de satisfaction",
+                      value: "96%",
+                      color: "#81C784",
+                    },
                   ].map((stat, i) => (
-                    <div key={i} style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                      <span style={{ fontSize: "13px", color: "#8B92A5", fontWeight: 500 }}>{stat.label}</span>
-                      <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                        <div style={{
-                          height: "4px", width: "80px", borderRadius: "2px",
-                          background: "#1E2230", position: "relative", overflow: "hidden",
-                        }}>
-                          <div style={{
-                            position: "absolute", inset: 0,
-                            width: i === 0 ? "70%" : i === 1 ? "85%" : "96%",
-                            background: stat.color,
+                    <div
+                      key={i}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <span
+                        style={{
+                          fontSize: "13px",
+                          color: "#8B92A5",
+                          fontWeight: 500,
+                        }}
+                      >
+                        {stat.label}
+                      </span>
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "10px",
+                        }}
+                      >
+                        <div
+                          style={{
+                            height: "4px",
+                            width: "80px",
                             borderRadius: "2px",
-                          }} />
+                            background: "#1E2230",
+                            position: "relative",
+                            overflow: "hidden",
+                          }}
+                        >
+                          <div
+                            style={{
+                              position: "absolute",
+                              inset: 0,
+                              width: i === 0 ? "70%" : i === 1 ? "85%" : "96%",
+                              background: stat.color,
+                              borderRadius: "2px",
+                            }}
+                          />
                         </div>
-                        <span style={{
-                          fontFamily: "'Bebas Neue', sans-serif",
-                          fontSize: "22px", letterSpacing: "1px",
-                          color: stat.color, minWidth: "52px", textAlign: "right",
-                        }}>{stat.value}</span>
+                        <span
+                          style={{
+                            fontFamily: "'Bebas Neue', sans-serif",
+                            fontSize: "22px",
+                            letterSpacing: "1px",
+                            color: stat.color,
+                            minWidth: "52px",
+                            textAlign: "right",
+                          }}
+                        >
+                          {stat.value}
+                        </span>
                       </div>
                     </div>
                   ))}
-                  <div style={{
-                    marginTop: "8px", paddingTop: "20px",
-                    borderTop: "1px solid #1E2230",
-                    fontSize: "12px", color: "#555",
-                  }}>
+                  <div
+                    style={{
+                      marginTop: "8px",
+                      paddingTop: "20px",
+                      borderTop: "1px solid #1E2230",
+                      fontSize: "12px",
+                      color: "#555",
+                    }}
+                  >
                     * Données basées sur les affiliés actifs 2024–2025
                   </div>
                 </div>
@@ -407,7 +501,8 @@ export default function WhySection() {
           {/* Bottom CTA */}
           <div className="why-cta">
             <p className="why-cta-text">
-              Prêt à profiter de l'offre ? <strong>Il te faut moins de 5 minutes.</strong>
+              Prêt à profiter de l'offre ?{" "}
+              <strong>Il te faut moins de 5 minutes.</strong>
             </p>
             <a
               href="https://www.1xbet.com"
@@ -418,7 +513,6 @@ export default function WhySection() {
               Créer mon compte maintenant →
             </a>
           </div>
-
         </div>
       </section>
     </>

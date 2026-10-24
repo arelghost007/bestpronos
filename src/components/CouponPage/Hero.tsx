@@ -25,11 +25,11 @@ export default function Hero() {
     <section id="heroSection" className="hero">
       <div className="mb-3!">
         <Image
-          src="/logo1.webp"
+          src="/mhrt.jpg"
           alt="Logo BestPronos"
           width={150}
           height={150}
-          className="object-cover"
+          className="object-cover rounded-full"
           priority
         />
       </div>

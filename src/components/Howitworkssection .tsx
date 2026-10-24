@@ -10,7 +10,7 @@ const steps = [
     desc: "Clique sur le bouton ci-dessous et remplis le formulaire d'inscription 1xBet en moins de 2 minutes. C'est gratuit et sans engagement.",
     detail: "Nom • Email • Mot de passe",
     cta: "Créer mon compte",
-    color: "#F5A623",
+    color: "#3B82F6",
     link: "https://www.1xbet.com",
   },
   {
@@ -35,7 +35,15 @@ const steps = [
   },
 ];
 
-function StepCard({ step, index, isLast }:{ step: typeof steps[0], index: number, isLast: boolean }) {
+function StepCard({
+  step,
+  index,
+  isLast,
+}: {
+  step: (typeof steps)[0];
+  index: number;
+  isLast: boolean;
+}) {
   const [visible, setVisible] = useState(false);
   const [hovered, setHovered] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -43,8 +51,10 @@ function StepCard({ step, index, isLast }:{ step: typeof steps[0], index: number
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.2 }
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
+      { threshold: 0.2 },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -76,16 +86,19 @@ function StepCard({ step, index, isLast }:{ step: typeof steps[0], index: number
     >
       {/* Connector line between steps */}
       {!isLast && (
-        <div style={{
-          position: "absolute",
-          top: "56px",
-          left: "calc(50% + 140px)",
-          right: "calc(-50% + 140px)",
-          height: "2px",
-          background: `linear-gradient(90deg, ${step.color}60, transparent)`,
-          zIndex: 0,
-          display: "none", // shown via CSS below in desktop
-        }} className="connector" />
+        <div
+          style={{
+            position: "absolute",
+            top: "56px",
+            left: "calc(50% + 140px)",
+            right: "calc(-50% + 140px)",
+            height: "2px",
+            background: `linear-gradient(90deg, ${step.color}60, transparent)`,
+            zIndex: 0,
+            display: "none", // shown via CSS below in desktop
+          }}
+          className="connector"
+        />
       )}
 
       {/* Card */}
@@ -105,124 +118,163 @@ function StepCard({ step, index, isLast }:{ step: typeof steps[0], index: number
         }}
       >
         {/* Top accent */}
-        <div style={{
-          position: "absolute", top: 0, left: 0, right: 0, height: "3px",
-          background: `linear-gradient(90deg, transparent, ${step.color}, transparent)`,
-          opacity: hovered ? 1 : 0.3,
-          transition: "opacity 0.3s",
-        }} />
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            height: "3px",
+            background: `linear-gradient(90deg, transparent, ${step.color}, transparent)`,
+            opacity: hovered ? 1 : 0.3,
+            transition: "opacity 0.3s",
+          }}
+        />
 
         {/* Ambient glow */}
-        <div style={{
-          position: "absolute", bottom: "-30%", right: "-20%",
-          width: "200px", height: "200px",
-          background: `radial-gradient(circle, ${step.color}10 0%, transparent 70%)`,
-          pointerEvents: "none",
-          opacity: hovered ? 1 : 0.5,
-          transition: "opacity 0.3s",
-        }} />
+        <div
+          style={{
+            position: "absolute",
+            bottom: "-30%",
+            right: "-20%",
+            width: "200px",
+            height: "200px",
+            background: `radial-gradient(circle, ${step.color}10 0%, transparent 70%)`,
+            pointerEvents: "none",
+            opacity: hovered ? 1 : 0.5,
+            transition: "opacity 0.3s",
+          }}
+        />
 
         {/* Step number — big background */}
-        <div style={{
-          position: "absolute", top: "16px", right: "20px",
-          fontFamily: "'Bebas Neue', sans-serif",
-          fontSize: "80px",
-          lineHeight: 1,
-          color: step.color,
-          opacity: 0.06,
-          letterSpacing: "-2px",
-          pointerEvents: "none",
-          userSelect: "none",
-        }}>
+        <div
+          style={{
+            position: "absolute",
+            top: "16px",
+            right: "20px",
+            fontFamily: "'Bebas Neue', sans-serif",
+            fontSize: "80px",
+            lineHeight: 1,
+            color: step.color,
+            opacity: 0.06,
+            letterSpacing: "-2px",
+            pointerEvents: "none",
+            userSelect: "none",
+          }}
+        >
           {step.number}
         </div>
 
         {/* Step badge */}
-        <div style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: "6px",
-          background: step.color + "18",
-          border: `1px solid ${step.color}35`,
-          borderRadius: "100px",
-          padding: "4px 14px 4px 8px",
-          marginBottom: "20px",
-        }}>
-          <div style={{
-            width: "20px", height: "20px",
-            background: step.color,
-            borderRadius: "50%",
-            display: "flex", alignItems: "center", justifyContent: "center",
-            fontSize: "10px", fontWeight: 700,
-            color: "#0A0B0F",
-            fontFamily: "'Outfit', sans-serif",
-          }}>
+        <div
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "6px",
+            background: step.color + "18",
+            border: `1px solid ${step.color}35`,
+            borderRadius: "100px",
+            padding: "4px 14px 4px 8px",
+            marginBottom: "20px",
+          }}
+        >
+          <div
+            style={{
+              width: "20px",
+              height: "20px",
+              background: step.color,
+              borderRadius: "50%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "10px",
+              fontWeight: 700,
+              color: "#0A0B0F",
+              fontFamily: "'Outfit', sans-serif",
+            }}
+          >
             {index + 1}
           </div>
-          <span style={{
-            fontSize: "11px", fontWeight: 600,
-            color: step.color, letterSpacing: "1px",
-            textTransform: "uppercase",
-            fontFamily: "'Outfit', sans-serif",
-          }}>
+          <span
+            style={{
+              fontSize: "11px",
+              fontWeight: 600,
+              color: step.color,
+              letterSpacing: "1px",
+              textTransform: "uppercase",
+              fontFamily: "'Outfit', sans-serif",
+            }}
+          >
             Étape {index + 1}
           </span>
         </div>
 
         {/* Icon */}
-        <div style={{
-          fontSize: "40px",
-          marginBottom: "20px",
-          display: "block",
-          transform: hovered ? "scale(1.12) rotate(-5deg)" : "scale(1) rotate(0deg)",
-          transition: "transform 0.35s cubic-bezier(0.34,1.56,0.64,1)",
-          width: "fit-content",
-        }}>
+        <div
+          style={{
+            fontSize: "40px",
+            marginBottom: "20px",
+            display: "block",
+            transform: hovered
+              ? "scale(1.12) rotate(-5deg)"
+              : "scale(1) rotate(0deg)",
+            transition: "transform 0.35s cubic-bezier(0.34,1.56,0.64,1)",
+            width: "fit-content",
+          }}
+        >
           {step.icon}
         </div>
 
         {/* Title */}
-        <h3 style={{
-          fontFamily: "'Bebas Neue', sans-serif",
-          fontSize: "30px",
-          letterSpacing: "0.5px",
-          color: "#fff",
-          marginBottom: "12px",
-          lineHeight: 1.05,
-        }}>
+        <h3
+          style={{
+            fontFamily: "'Bebas Neue', sans-serif",
+            fontSize: "30px",
+            letterSpacing: "0.5px",
+            color: "#fff",
+            marginBottom: "12px",
+            lineHeight: 1.05,
+          }}
+        >
           {step.title}
         </h3>
 
         {/* Description */}
-        <p style={{
-          fontSize: "14px",
-          lineHeight: "1.7",
-          color: "#8B92A5",
-          marginBottom: "20px",
-          fontFamily: "'Outfit', sans-serif",
-        }}>
+        <p
+          style={{
+            fontSize: "14px",
+            lineHeight: "1.7",
+            color: "#8B92A5",
+            marginBottom: "20px",
+            fontFamily: "'Outfit', sans-serif",
+          }}
+        >
           {step.desc}
         </p>
 
         {/* Detail chip */}
-        <div style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: "8px",
-          background: "#0A0B0F",
-          border: "1px solid #1E2230",
-          borderRadius: "8px",
-          padding: "8px 14px",
-          marginBottom: "24px",
-          width: "100%",
-        }}>
-          <span style={{
-            fontSize: "11px",
-            color: step.color,
-            fontWeight: 600,
-            letterSpacing: "0.5px",
-            fontFamily: "'Outfit', sans-serif",
-          }}>
+        <div
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "8px",
+            background: "#0A0B0F",
+            border: "1px solid #1E2230",
+            borderRadius: "8px",
+            padding: "8px 14px",
+            marginBottom: "24px",
+            width: "100%",
+          }}
+        >
+          <span
+            style={{
+              fontSize: "11px",
+              color: step.color,
+              fontWeight: 600,
+              letterSpacing: "0.5px",
+              fontFamily: "'Outfit', sans-serif",
+            }}
+          >
             {step.detail}
           </span>
         </div>
@@ -264,8 +316,13 @@ export default function HowItWorksSection() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setTitleVisible(true); setTimeout(() => setBarVisible(true), 500); } },
-      { threshold: 0.2 }
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTitleVisible(true);
+          setTimeout(() => setBarVisible(true), 500);
+        }
+      },
+      { threshold: 0.2 },
     );
     if (titleRef.current) observer.observe(titleRef.current);
     return () => observer.disconnect();
@@ -277,7 +334,7 @@ export default function HowItWorksSection() {
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
         :root {
-          --gold: #F5A623;
+          --gold: #3B82F6;
           --dark-bg: #0A0B0F;
           --dark-card: #12141A;
           --dark-border: #1E2230;
@@ -501,68 +558,94 @@ export default function HowItWorksSection() {
       <section className="how-section">
         <div className="how-blob" />
         <div className="how-inner">
-
           {/* Header */}
           <div className="how-header" ref={titleRef}>
-            <div className="section-tag" style={{
-              opacity: titleVisible ? 1 : 0,
-              transform: titleVisible ? "translateY(0)" : "translateY(12px)",
-              transition: "opacity 0.6s ease, transform 0.6s ease",
-            }}>
+            <div
+              className="section-tag"
+              style={{
+                opacity: titleVisible ? 1 : 0,
+                transform: titleVisible ? "translateY(0)" : "translateY(12px)",
+                transition: "opacity 0.6s ease, transform 0.6s ease",
+              }}
+            >
               <div className="tag-dot" />
               <span>3 étapes simples</span>
             </div>
 
-            <h2 className="how-title" style={{
-              opacity: titleVisible ? 1 : 0,
-              transform: titleVisible ? "translateY(0)" : "translateY(20px)",
-              transition: "opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s",
-            }}>
+            <h2
+              className="how-title"
+              style={{
+                opacity: titleVisible ? 1 : 0,
+                transform: titleVisible ? "translateY(0)" : "translateY(20px)",
+                transition: "opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s",
+              }}
+            >
               Comment ça <em>marche</em> ?
             </h2>
 
-            <p className="how-subtitle" style={{
-              opacity: titleVisible ? 1 : 0,
-              transform: titleVisible ? "translateY(0)" : "translateY(14px)",
-              transition: "opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s",
-            }}>
-              Obtenir ton bonus prend moins de 5 minutes. Suis ces 3 étapes et c'est parti.
+            <p
+              className="how-subtitle"
+              style={{
+                opacity: titleVisible ? 1 : 0,
+                transform: titleVisible ? "translateY(0)" : "translateY(14px)",
+                transition: "opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s",
+              }}
+            >
+              Obtenir ton bonus prend moins de 5 minutes. Suis ces 3 étapes et
+              c'est parti.
             </p>
           </div>
 
           {/* Progress indicator */}
-          <div className="progress-bar-wrap" style={{
-            opacity: titleVisible ? 1 : 0,
-            transition: "opacity 0.6s ease 0.3s",
-          }}>
+          <div
+            className="progress-bar-wrap"
+            style={{
+              opacity: titleVisible ? 1 : 0,
+              transition: "opacity 0.6s ease 0.3s",
+            }}
+          >
             {steps.map((step, i) => (
-              <div key={i} style={{ display: "flex", alignItems: "center", gap: 0 }}>
+              <div
+                key={i}
+                style={{ display: "flex", alignItems: "center", gap: 0 }}
+              >
                 <div className="progress-step">
-                  <div className="progress-circle" style={{
-                    borderColor: barVisible ? step.color : "#2a2d38",
-                    background: barVisible ? step.color + "18" : "transparent",
-                    color: barVisible ? step.color : "#444",
-                    transitionDelay: `${i * 0.2}s`,
-                  }}>
+                  <div
+                    className="progress-circle"
+                    style={{
+                      borderColor: barVisible ? step.color : "#2a2d38",
+                      background: barVisible
+                        ? step.color + "18"
+                        : "transparent",
+                      color: barVisible ? step.color : "#444",
+                      transitionDelay: `${i * 0.2}s`,
+                    }}
+                  >
                     {i + 1}
                   </div>
-                  <span className="progress-label" style={{
-                    color: barVisible ? step.color : "#333",
-                    transitionDelay: `${i * 0.2}s`,
-                    fontSize: "10px",
-                  }}>
+                  <span
+                    className="progress-label"
+                    style={{
+                      color: barVisible ? step.color : "#333",
+                      transitionDelay: `${i * 0.2}s`,
+                      fontSize: "10px",
+                    }}
+                  >
                     Étape {i + 1}
                   </span>
                 </div>
                 {i < steps.length - 1 && (
-                  <div className="progress-line" style={{
-                    background: barVisible
-                      ? `linear-gradient(90deg, ${step.color}80, ${steps[i + 1].color}40)`
-                      : "#1E2230",
-                    transitionDelay: `${i * 0.2 + 0.1}s`,
-                    margin: "0 4px",
-                    marginBottom: "22px",
-                  }} />
+                  <div
+                    className="progress-line"
+                    style={{
+                      background: barVisible
+                        ? `linear-gradient(90deg, ${step.color}80, ${steps[i + 1].color}40)`
+                        : "#1E2230",
+                      transitionDelay: `${i * 0.2 + 0.1}s`,
+                      margin: "0 4px",
+                      marginBottom: "22px",
+                    }}
+                  />
                 )}
               </div>
             ))}
@@ -571,7 +654,12 @@ export default function HowItWorksSection() {
           {/* Steps */}
           <div className="steps-grid">
             {steps.map((step, i) => (
-              <StepCard key={i} step={step} index={i} isLast={i === steps.length - 1} />
+              <StepCard
+                key={i}
+                step={step}
+                index={i}
+                isLast={i === steps.length - 1}
+              />
             ))}
           </div>
 
@@ -585,15 +673,16 @@ export default function HowItWorksSection() {
               </div>
             </div>
             <div className="guarantee-items">
-              {["Sans frais cachés", "Bonus garanti", "Support disponible"].map((item, i) => (
-                <div key={i} className="guarantee-item">
-                  <div className="g-dot" />
-                  {item}
-                </div>
-              ))}
+              {["Sans frais cachés", "Bonus garanti", "Support disponible"].map(
+                (item, i) => (
+                  <div key={i} className="guarantee-item">
+                    <div className="g-dot" />
+                    {item}
+                  </div>
+                ),
+              )}
             </div>
           </div>
-
         </div>
       </section>
     </>
