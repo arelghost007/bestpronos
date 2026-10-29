@@ -25,8 +25,8 @@ export default function Hero() {
     <section id="heroSection" className="hero">
       <div className="mb-3!">
         <Image
-          src="/mhrt.jpg"
-          alt="Logo BestPronos"
+          src="/logo.png"
+          alt="Logo"
           width={150}
           height={150}
           className="object-cover rounded-full"
