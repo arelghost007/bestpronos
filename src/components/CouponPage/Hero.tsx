@@ -19,13 +19,13 @@ export default function Hero() {
   const couponImage = currentCoupon?.image_url || "/assets/image.png";
   const whatsappUrl =
     currentCoupon?.whatsapp_link ||
-    "https://chat.whatsapp.com/DTobg9SWau099IAdQ7WU4v";
+    "https://whatsapp.com/channel/0029VbBaBPKEwEk5K7WG1y0r";
 
   return (
     <section id="heroSection" className="hero">
       <div className="mb-3!">
         <Image
-          src="/logo.png"
+          src="/mhrt.jpg"
           alt="Logo"
           width={150}
           height={150}
