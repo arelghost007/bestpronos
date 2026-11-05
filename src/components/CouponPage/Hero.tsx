@@ -25,7 +25,7 @@ export default function Hero() {
     <section id="heroSection" className="hero">
       <div className="mb-3!">
         <Image
-          src="/logo_pk.png"
+          src="/logo.png"
           alt="Logo"
           width={150}
           height={150}
