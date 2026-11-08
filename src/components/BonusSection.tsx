@@ -52,7 +52,7 @@ const BONUS_CARDS = [
     title: "Application mobile",
     badge: "iOS & Android",
     color: "#81C784",
-    desc: "L'app 1xBet est rapide, intuitive et disponible gratuitement. Toutes les fonctions desktop dans ta poche.",
+    desc: "L'app 1xBet est rapide, intuitive et disponible gratuitement. Toutes les fonctions desktop dans ta poche",
     features: [
       "Notifications push",
       "Touch ID / Face ID",
