@@ -119,7 +119,7 @@ export default function Hero() {
             <Users size={18} />
           </span>
           <span>
-            <strong>+4 000</strong> membres actifs
+            <strong>+5 000</strong> membres actifs
           </span>
         </div>
       </div>
