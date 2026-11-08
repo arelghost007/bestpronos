@@ -45,7 +45,7 @@ const BONUS_CARDS = [
     badge: "En temps réel",
     color: "#F48FB1",
     desc: "Parie en direct sur les matchs en cours avec des cotes qui évoluent en temps réel. Adrénaline garantie.",
-    features: ["Streaming live intégré", "Stats en direct", "Paris rapides"],
+    features: ["Streaming live intégrée", "Stats en direct", "Paris rapides"],
   },
   {
     icon: "📱",
