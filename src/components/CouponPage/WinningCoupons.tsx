@@ -15,7 +15,7 @@ export default function WinningCoupons({
   return (
     <section id="winningCouponsSection" className="py-10">
       <h2 className="section-title flex justify-center items-center gap-2">
-        <Activity size={46} color="#3B82F6" /> Derniers coupons{" "}
+        <Activity size={46} color="#3B82F6" />Les Derniers coupons{" "}
         <span className="text-blue-500">gagnants</span>
       </h2>
 
