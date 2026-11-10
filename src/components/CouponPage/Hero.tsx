@@ -25,7 +25,7 @@ export default function Hero() {
     <section id="heroSection" className="hero">
       <div className="mb-3!">
         <Image
-          src="/mhrt.jpg"
+          src="/logo.png"
           alt="Logo"
           width={150}
           height={150}
@@ -119,7 +119,7 @@ export default function Hero() {
             <Users size={18} />
           </span>
           <span>
-            <strong>+5 000</strong> membres actifs
+            <strong>+7 000</strong> membres actifs
           </span>
         </div>
       </div>
