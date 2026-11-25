@@ -2,10 +2,10 @@ import { CouponData, WinningCoupon } from "@/types/dataTypes";
 
 export const COUPON_DATA: CouponData = {
   id: 1,
-  odds: 1119.329,
+  odds: 1344.714,
   stake: 23000,
-  gain: 25744578.89,
-  date: "24/11/2026",
+  gain: 30928429.04,
+  date: "28/11/2026",
   image_url: "/assets/coupon_jour.webp",
   whatsapp_link: "https://whatsapp.com/channel/0029VbBQO9YFi8xh4alTcn1e",
 };
